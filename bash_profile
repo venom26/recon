@@ -38,6 +38,8 @@ asntoip(){
 curl https://ipinfo.io/$1 >/dev/null | hxnormalize -x | hxselect '#ipv4-data tr>tda::attr(href)' -s '\n' | cut -d'/' -f3- | sed 's/.$//'
 }
 #$1 is asn number that you will get from ipinfo.io website.It looks like 'https://ipinfo.io/AS26444' here asn number is AS26444 
+#before running above command make sure to install html-xml-utils
+sudo apt-get install html-xml-utils
 
 #To find open ports of an ip range:-
 mscan(){
