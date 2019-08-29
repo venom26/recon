@@ -135,7 +135,7 @@ uat
 beta
 
 #save this in a file patterns.txt
-altdns -i hosts.txt -o altdnsdata.txt -w patterns.txt -r -s altdnsoutput.txt
+altdns -i hosts.txt -o altdnsdata.txt -w patterns.txt -r -s altdnsoutput.txt -t 20
 
 
 
