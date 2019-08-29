@@ -119,7 +119,23 @@ Content-Length: 69
 
 systemctl snapshot:-takes snapshot of system can be used if system got crashed do study
 
+#While hunting for api look for following parameters using alt dns
+qa
+dev
+admin
+backend
+api
+stage
+web
+web-qa
+web-dev
+test
+test3
+uat
+beta
 
+#save this in a file patterns.txt
+altdns -i hosts.txt -o altdnsdata.txt -w patterns.txt -r -s altdnsoutput.txt
 
 
 
