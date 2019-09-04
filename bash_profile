@@ -58,3 +58,7 @@ sudo masscan -p80,443,2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,590
 }
 $1 is name of file containing ip list
 $2 is name of output file
+
+asntoip(){
+whois -h whois.radb.net  -- '-i origin '$1'' | grep -Eo "([0-9.]+){4}/[0-9]+" | uniq | tee -a ip.txt
+}
