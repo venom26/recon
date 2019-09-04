@@ -141,4 +141,5 @@ altdns -i hosts.txt -o altdnsdata.txt -w patterns.txt -r -s altdnsoutput.txt -t 
 amass enum -passive -d target.com
 amass enum -active -d target.com -brute
 
-
+#printing a particular no word/ip in line 
+echo "$pid"|awk '{print $2}'
