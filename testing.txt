@@ -126,6 +126,7 @@ admin
 backend
 api
 stage
+staging
 web
 web-qa
 web-dev
