@@ -11,7 +11,7 @@ curl -s https://crt.sh/?q=%.$1  | sed 's/<\/\?[^>]\+>//g' | grep $1
 dirsearch(){
 #!/bin/bash
 cd /home/venom/tools/directory_bruteforce/dirsearch
-sudo python3 dirsearch.py -u https://$1/ -e htm,html,js,zip,asp,aspx,php,bak,sql,old,txt,gz,gz.tar -x 301,404,400 -t 200
+sudo python3 dirsearch.py -u https://$1/ -e htm,html,js,json,zip,asp,aspx,php,bak,sql,old,txt,gz,gz.tar -x 301,404,400 -t 200
 }
 
 crtshauto(){
