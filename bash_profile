@@ -62,3 +62,7 @@ $2 is name of output file
 asntoip(){
 whois -h whois.radb.net  -- '-i origin '$1'' | grep -Eo "([0-9.]+){4}/[0-9]+" | uniq | tee -a ip.txt
 }
+
+fd(){
+findomain -a -o $2 -t $1
+}
