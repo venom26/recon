@@ -66,3 +66,27 @@ whois -h whois.radb.net  -- '-i origin '$1'' | grep -Eo "([0-9.]+){4}/[0-9]+" | 
 fd(){
 findomain -a -o $2 -t $1
 }
+
+
+third_level_crtsh(){
+echo "Gathering alive third-level domains with crtsh..."
+for domain in $(cat third-level.txt);do curl -s https://crt.sh/?q=%.domain | sed 's/<\/\?[^>]\+>//g' | grep $domain | httprobe | tee -a third_alive.txt;done
+}
+#for gathering third level subdomains using crtsh
+
+third_level(){
+cat all.txt | grep -Po "(\w+\.\w+\.\w+)$" | sort -u | tee -a third-level.txt
+}
+#gathering third level domains from all.txt
+
+
+sublist3r_probe(){
+mkdir thirdlevels
+
+echo "Gathering full third level domains with Sublist3r..."
+for domain in $(cat third-level.txt);do sublist3r -d $domain -o thirdlevels/$domain.txt;cat thirdlevels/$domain.txt | sort -u >> final.txt;done
+
+echo "Probing for alive third-levels..."
+cat final.txt | httprobe | tee -a probed.txt
+}
+#this will get thirl level domains from "third_level" script and feed it to sublist3r and then sublist3r will find its subdomains and store it in a folder and all of them will be probed in final.txt
