@@ -158,3 +158,6 @@ altdns -i hosts.txt -o altdnsdata.txt -w patterns.txt -r -s altdnsoutput.txt -t 
 
 
 OneLiner extracts all API endpoints from AngularJS & Angular javascript files: curl -s URL | grep -Po “(\/)((?:[a-zA-Z\-_\:\.0–9\{\}]+))(\/)*((?:[a-zA-Z\-_\:\.0–9\{\}]+))(\/)((?:[a-zA-Z\-_\/\:\.0–9\{\}]+))” | sort -u
+
+Simple Script for scanning ports of all grabbed subdomains using masscan:-
+for scan in $(cat <file-path>); do masscan -p1-65535 $(dig +short $scan|grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"|head -1) --max-rate 1000 |& tee port_scan
