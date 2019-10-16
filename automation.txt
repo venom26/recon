@@ -2,7 +2,7 @@ best recon resource:- https://medium.com/@maverickNerd/recon-everything-48aafbb8
 
 1)gather all subdomains with assetfinder,crtsh,findomain,amass,subfinder,new_scripts,sublister,altdns.
 1.2)use dnsgen to generate combinations of domains dnsgen all.txt
-	it can also be used with masscan:- cat domains.txt | dnsgen — | massdns -r /home/venom/tools/subdomain_bruteforce/dnsgen/resolvers.txt -t A -o J — flush 2>/dev/null
+	it can also be used with masscan:- cat domains.txt | dnsgen - | massdns -r /home/venom/tools/subdomain_bruteforce/dnsgen/resolvers.txt -t A -o J — flush 2>/dev/null
 2)Probe them all
 3)to get more url throw all.txt | waybackurls | tee -a wb_urls.txt
 4)get all js files with getJS https://github.com/003random/getJS usage:- cat domains.txt|getJS|tojson
