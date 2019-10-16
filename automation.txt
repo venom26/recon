@@ -1,0 +1,54 @@
+best recon resource:- https://medium.com/@maverickNerd/recon-everything-48aafbb8987
+
+1)gather all subdomains with assetfinder,crtsh,findomain,amass,subfinder,new_scripts,sublister,altdns.
+1.2)use dnsgen to generate combinations of domains dnsgen all.txt
+	it can also be used with masscan:- cat domains.txt | dnsgen — | massdns -r /home/venom/tools/subdomain_bruteforce/dnsgen/resolvers.txt -t A -o J — flush 2>/dev/null
+2)Probe them all
+3)to get more url throw all.txt | waybackurls | tee -a wb_urls.txt
+4)get all js files with getJS https://github.com/003random/getJS
+5)Shodan -
+
+Ports:8443, 8080
+Title: “Dashboard[Jenkins]”
+Product: Tomcat
+Hostname: example.com
+Org: google
+ssl:Google
+
+To find jenkins instance in a target:
+
+org:{org name;x-jenkins:200}
+
+6)Github For Recon
+
+• Github is extremely helpful in finding Sensitive information regarding the targets. Access-keys, password, open endings, s3 buckets, backup files, etc. can be found on public GitHub repositories.
+
+• Look for below things during a general first assessment(taken from edoverflow):
+
+– API and key. (Get some more endpoints and find API keys.)
+
+– token
+
+– secret
+
+– TODO
+
+– password
+
+– vulnerable 😜
+
+– http:// & https://
+
+Then I will focus on terms that make me smile when developers mess things up:
+
+– CSRF
+
+– random
+
+– hash
+
+– MD5, SHA-1, SHA-2, etc.
+
+– HMAC
+
+7)use linkfinder to discover endpoints from js files.
