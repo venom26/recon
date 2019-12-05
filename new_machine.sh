@@ -68,13 +68,13 @@ echo "done"
 
 #install assetfinder
 echo "Installing Assetfinder"
-go get -u github.com/tomnomnom/assetfinderecho 
-"done"
+go get -u github.com/tomnomnom/assetfinder 
+echo "done"
 
 #install ffuf
 echo "Installing ffuf"
 go get github.com/ffuf/ffuf
-"done"
+echo "done"
 
 #install chromium
 echo "Installing Chromium"
