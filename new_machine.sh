@@ -18,6 +18,11 @@ sudo apt-get install -y snapd
 sudo snapd start
 echo 'PATH=$PATH:/snap/bin' >> ~/.bashrc
 
+#install rust
+echo "Installing rust"
+curl https://sh.rustup.rs -sSf | sh
+"Done"
+
 #install go
 if [[ -z "$GOPATH" ]];then
 echo "It looks like go is not installed, would you like to install it now"
@@ -105,6 +110,10 @@ git clone https://github.com/jobertabma/virtual-host-discovery.git
 cd ~/tools/
 echo "done"
 
+echo "installing findomain"
+git clone https://github.com/Edu4rdSHL/findomain.git
+cd ~/tools/
+echo"done"
 
 echo "installing sqlmap"
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
