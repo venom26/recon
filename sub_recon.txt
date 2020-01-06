@@ -52,3 +52,9 @@ Then I will focus on terms that make me smile when developers mess things up:
 – HMAC
 
 7)use linkfinder to discover endpoints from js files.
+
+vulners nmap script to find vulnerabilities installation
+git clone https://github.com/scipag/vulscan scipag_vulscan
+ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan    
+To run:- nmap -sV --script=vulscan/vulscan.nse www.example.com
+
