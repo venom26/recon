@@ -71,6 +71,19 @@ echo "Installing Assetfinder"
 go get -u github.com/tomnomnom/assetfinder 
 echo "done"
 
+#install hakrawler
+echo "Installing Hakrawler"
+go get github.com/hakluke/hakrawler
+echo "done"
+
+#install hakcheckurl
+echo "Installing Hakcheckurl"
+go get github.com/hakluke/hakcheckurl
+
+#install hakrevdns
+echo "Installing Hakrevdns"
+go get github.com/hakluke/hakrevdns
+
 #install ffuf
 echo "Installing ffuf"
 go get github.com/ffuf/ffuf
