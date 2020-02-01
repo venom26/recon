@@ -131,3 +131,8 @@ echo " composer.json"
 echo "https://github.com/search?q=%22$1%22+composer.json&type=Code"
 echo "https://github.com/search?q=%22$without_suffix%22+composer.json&type=Code"
 echo ""
+echo "  dotfile"
+echo "https://github.com/search?q=%22$1%22+dotfile&type=Code"
+echo "https://github.com/search?q=%22$without_suffix%22+dotfile&type=Code"
+echo ""
+
