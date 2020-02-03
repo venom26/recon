@@ -147,6 +147,10 @@ echo "installing nmap"
 sudo apt-get install -y nmap
 echo "done"
 
+echo "installing your scripts"
+git clone https://github.com/venom26/recon.git
+echo "done"
+
 echo "installing massdns"
 git clone https://github.com/blechschmidt/massdns.git
 cd ~/tools/massdns
