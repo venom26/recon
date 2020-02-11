@@ -17,12 +17,13 @@ subdomain()
 	sublist3r -d $domain -v -o op.txt
 	subfinder -d $domain -o op.txt	
 	assetfinder --subs-only $domain | tee -a op.txt
-	amass enum -passive -d $doamin | tee -a op.txt
-	amass enum -active -d $domain | tee -a op.txt
+	amass enum -passive -d $doamin -ip | tee -a amass_ip.txt
+	amass enum -active -d $domain -ip | tee -a amass_ips.txt
+	cat amass_ips.txt | awk '{print $1}' | tee -a op.txt
 }
 sort()
 {
-	uniq op.txt >> all.txt
+	cat op.txt | sort -u | all.txt
 }
 bruteforce()
 {
@@ -43,7 +44,7 @@ uniq alive2.txt >> alive.txt
 
 wb()
 {
-	for i in $(cat alive.txt);do echo $i | waybackurls | hakcheckurl;done | tee -a wb.txt
+	for i in $(cat op.txt);do echo $i | waybackurls ;done | tee -a wb.txt
 	}
 wb	
 
