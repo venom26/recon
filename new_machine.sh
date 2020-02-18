@@ -129,6 +129,11 @@ git clone https://github.com/Edu4rdSHL/findomain.git
 cd ~/tools/
 echo"done"
 
+echo "installing relative-url-extractor"
+git clone https://github.com/jobertabma/relative-url-extractor.git
+cd ~/tools/
+echo "done"
+
 echo "installing sqlmap"
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 cd ~/tools/
