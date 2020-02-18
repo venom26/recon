@@ -187,5 +187,16 @@ echo "installing crtndstry"
 git clone https://github.com/nahamsec/crtndstry.git
 echo "done"
 
+echo "installing subfinder"
+source ~/.bashrc
+go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+echo "done"
+
+echo "installing amass"
+go get -v -u github.com/OWASP/Amass/v3/...
+cd $GOPATH/src/github.com/OWASP/Amass
+go install ./...
+echo "done"
+
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
