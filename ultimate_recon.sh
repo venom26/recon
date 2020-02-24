@@ -17,7 +17,7 @@ subdomain()
 	sublist3r -d $domain -v -o op.txt
 	subfinder -d $domain -o op.txt	
 	assetfinder --subs-only $domain | tee -a op.txt
-	amass enum -passive -d $doamin -ip | tee -a amass_ip.txt
+	amass enum -passive -d $doamin | tee -a amass_ip.txt
 	amass enum -active -d $domain -ip | tee -a amass_ips.txt
 	cat amass_ips.txt | awk '{print $1}' | tee -a op.txt
 }
