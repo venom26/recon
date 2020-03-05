@@ -72,9 +72,9 @@ echo "Installing Assetfinder"
 go get -u github.com/tomnomnom/assetfinder 
 echo "done"
 
-#install hakrawler
-echo "Installing Hakrawler"
-go get github.com/hakluke/hakrawler
+#install gau
+echo "Installing gau"
+go get -u github.com/lc/gau
 echo "done"
 
 #install hakcheckurl
