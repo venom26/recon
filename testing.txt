@@ -167,3 +167,6 @@ for i in $(cat wb.txt | awk '{print $2}'| perl -n -e 'm{http://[^/]+(/[^?]+)};pr
 
 #getting endpoints form js files
 cat *.js | grep -o -E `(https?://)?/?[{}a-z0-9A-Z_\.-]{2,}/[{}/a-z0-9A-Z_\.-]+`
+
+#replacing \n with new line
+cat file | awk '{gsub(/\\n/,"\n")}1'
