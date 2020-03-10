@@ -5,8 +5,7 @@ curl http://ipinfo.io/$1
 
 crtsh(){
 #!/bin/bash
-curl -s https://crt.sh/?q=%.$1  | sed 's/<\/\?[^>]\+>//g' | grep $1
-}
+curl -s https://crt.sh\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | sort -u}
 
 dirsearch(){
 #!/bin/bash
