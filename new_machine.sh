@@ -77,6 +77,11 @@ echo "Installing gau"
 go get -u github.com/lc/gau
 echo "done"
 
+#installing kxss
+echo "installing kxss"
+go get -u github.com/tomnomnom/hacks/kxss
+echo "done"
+
 #install hakcheckurl
 echo "Installing Hakcheckurl"
 go get github.com/hakluke/hakcheckurl
