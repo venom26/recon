@@ -30,21 +30,21 @@ bruteforce()
 	echo -e "######Starting Bruteforce######\n"
 altdns -i all.txt -o data_output -w ~/tools/recon/patterns.txt -r -s results_output.txt
 mv results_output.txt dns_op.txt
-cat dns_op.txt all.txt
+cat dns_op.txt output.txt
 }
 
 subdomain
 sort
 bruteforce
 
-mv all.txt output.txt
+cat output.txt | sort -u | tee -a all.txt
 echo "Checking for alive subdomains"
-cat output.txt | httprobe | tee -a alive2.txt
+cat all.txt | httprobe | tee -a alive2.txt
 uniq alive2.txt >> alive.txt
 
 wb()
 {
-	for i in $(cat op.txt);do echo $i | waybackurls ;done | tee -a wb.txt
+	for i in $(cat all.txt);do echo $i | waybackurls ;done | tee -a wb.txt
 	}
 wb	
 
