@@ -42,6 +42,10 @@ echo "Checking for alive subdomains"
 cat all.txt | httprobe | tee -a alive2.txt
 uniq alive2.txt >> alive.txt
 
+#Running smuggler.py
+echo "checking for http request smuggling"
+python3 ~/tools/smuggler.py -u alive.txt -t 20
+
 wb()
 {
 	for i in $(cat all.txt);do echo $i | waybackurls ;done | tee -a wb.txt
