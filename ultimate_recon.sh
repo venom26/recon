@@ -11,46 +11,24 @@ if [ -z "$domain" ]
 		exit 1
 fi
 
-subdomain()
-{
-#	crtsh $domain | tee -a op.txt
-	sublist3r -d $domain -v -o op.txt
-	subfinder -d $domain -o op.txt	
-	assetfinder --subs-only $domain | tee -a op.txt
-	amass enum -passive -d $doamin | tee -a op.txt
-	amass enum -active -d $domain -ip | tee -a amass_ips.txt
-	cat amass_ips.txt | awk '{print $1}' | tee -a op.txt
-}
-sort()
-{
-	cat op.txt | sort -u | tee -a all.txt
-}
-bruteforce()
-{
-	echo -e "######Starting Bruteforce######\n"
+sublist3r -d $domain -v -o op.txt
+subfinder -d $domain -o op.txt	
+assetfinder --subs-only $domain | tee -a op.txt
+amass enum -passive -d $doamin | tee -a op.txt
+amass enum -active -d $domain -ip | tee -a amass_ips.txt
+cat amass_ips.txt | awk '{print $1}' | tee -a op.txt
+cat op.txt | sort -u | tee -a all.txt
+echo -e "######Starting Bruteforce######\n"
 altdns -i all.txt -o data_output -w ~/tools/recon/patterns.txt -r -s results_output.txt
 mv results_output.txt dns_op.txt
 cat dns_op.txt output.txt
-}
-
-subdomain
-sort
-bruteforce
 
 cat output.txt | sort -u | tee -a all.txt
 echo "Checking for alive subdomains"
 cat all.txt | httprobe | tee -a alive2.txt
-uniq alive2.txt >> alive.txt
+cat alive2.txt | sort -u | tee -a alive.txt
 
-#Running smuggler.py
-echo "checking for http request smuggling"
-python3 ~/tools/smuggler.py -u alive.txt -t 20
-
-wb()
-{
-	for i in $(cat all.txt);do echo $i | waybackurls ;done | tee -a wb.txt
-	}
-wb	
+for i in $(cat all.txt);do echo $i | waybackurls ;done | tee -a wb.txt
 
 mkdir scripts
 mkdir scriptsresponse
