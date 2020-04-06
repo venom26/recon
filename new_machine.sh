@@ -175,6 +175,10 @@ make
 cd ~/tools/
 echo "done"
 
+echo "installing corsy"
+git clone https://github.com/s0md3v/Corsy.git
+echo "DONE"
+
 echo "installing asnlookup"
 git clone https://github.com/yassineaboukir/asnlookup.git
 cd ~/tools/asnlookup
