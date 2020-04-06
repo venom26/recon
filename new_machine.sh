@@ -1,6 +1,9 @@
 #!/bin/bash
 
 sudo apt update
+sudo apt-get install -y psmisc
+sudo apt install  -y host
+sudo apt install -y dnsutils
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libssl-dev
 sudo apt-get install -y jq
