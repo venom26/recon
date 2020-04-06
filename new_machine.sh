@@ -175,8 +175,11 @@ make
 cd ~/tools/
 echo "done"
 
-echo "installing corsy"
+echo "installing Corsy"
 git clone https://github.com/s0md3v/Corsy.git
+cd Corsy
+sudo pip3 install -r requirments.txt
+cd ..
 echo "DONE"
 
 echo "installing asnlookup"
