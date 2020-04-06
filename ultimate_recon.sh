@@ -1,18 +1,19 @@
 #!/bin/bash
+
 while getopts ":d:" input;do
-	case "$input" in
-		d) domain=${OPTARG}
-			;;
-		esac
-	done
-if [ -z "$domain" ]	
-	then
-		echo "Please give a domain like \"-d domain.com\""
-		exit 1
+        case "$input" in
+                d) domain=${OPTARG}
+                        ;;
+                esac
+        done
+if [ -z "$domain" ]     
+        then
+                echo "Please give a domain like \"-d domain.com\""
+                exit 1
 fi
 
 sublist3r -d $domain -v -o op.txt
-subfinder -d $domain -o op.txt	
+subfinder -d $domain -o op.txt  
 assetfinder --subs-only $domain | tee -a op.txt
 amass enum -passive -d $doamin | tee -a op.txt
 amass enum -active -d $domain -ip | tee -a amass_ips.txt
@@ -28,7 +29,36 @@ echo "Checking for alive subdomains"
 cat all.txt | httprobe | tee -a alive2.txt
 cat alive2.txt | sort -u | tee -a alive.txt
 
-for i in $(cat all.txt);do echo $i | waybackurls ;done | tee -a wb.txt
+~/tools/massdns/bin/massdns -r ~/tools/massdns/lists/resolvers.txt -q -t A -o S -w massdns.raw all.txt
+cat massdns.raw | grep -e ' A ' |  cut -d 'A' -f 2 | tr -d ' ' > massdns.txt
+cat *.txt | sort -V | uniq > $IP_PATH/final-ips.txt
+echo -e "${BLUE}[*] Check the list of IP addresses at $IP_PATH/final-ips.txt${RESET}"
+
+echo "Now looking for CORS misconfiguration"
+python3 ~/tools/Corsy/corsy.py -i alive.txt -t 40 | tee -a corsy_op.txt
+
+echo "Starting CMS detection"
+whatweb -i alive.txt | tee -a whatweb_op.txt
+
+mkdir wayback_data
+cd wayback_data
+for i in $(cat ../all.txt);do echo $i | waybackurls ;done | tee -a wb.txt
+cat wb.txt  | sort -u | unfurl --unique keys > paramlist.txt
+
+cat wb.txt  | sort -u | grep -P "\w+\.js(\?|$)" | sort -u > jsurls.txt
+
+cat wb.txt  | sort -u | grep -P "\w+\.php(\?|$) | sort -u " > phpurls.txt
+
+cat wb.txt  | sort -u | grep -P "\w+\.aspx(\?|$) | sort -u " > aspxurls.txt
+
+cat wb.txt  | sort -u | grep -P "\w+\.jsp(\?|$) | sort -u " > jspurls.txt
+
+cat wb.txt  | sort -u | grep -P "\w+\.txt(\?|$) | sort -u " > robots.txt
+
+cd ..
+
+echo "Looking for HTTP request smugglig"
+python3 ~/tools/smuggler.py -o alive.txt | tee -a smuggler_op.txt
 
 mkdir scripts
 mkdir scriptsresponse
@@ -39,8 +69,8 @@ mkdir headers
 jsep()
 {
 response(){
-echo "Gathering Response"	
-	for x in $(cat alive.txt)
+echo "Gathering Response"       
+        for x in $(cat alive.txt)
 do
         NAME=$(echo $x | awk -F/ '{print $3}')
         curl -X GET -H "X-Forwarded-For: evil.com" $x -I > "headers/$NAME" 
@@ -49,7 +79,7 @@ done
 }
 
 jsfinder(){
-echo "Gathering JS Files"	
+echo "Gathering JS Files"       
 for x in $(ls "responsebody")
 do
         printf "\n\n${RED}$x${NC}\n\n"
@@ -90,5 +120,6 @@ endpoints
 }
 jsep
 
-
 cat endpoints/*/* | sort -u | tee -a endpoints.txt
+
+for i in $(cat alive.txt);do ffuf -u $i/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200 -t 60 ;done| tee -a ffuf_op.txt
