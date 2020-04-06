@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt update
+sudo pip3 install colored
 sudo apt-get install -y psmisc
 sudo apt install  -y host
 sudo apt install -y dnsutils
