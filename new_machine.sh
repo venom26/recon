@@ -112,6 +112,7 @@ echo "installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
 pip install -r requirements.txt
+sudo python setup.py install
 cd ~/tools/
 echo "done"
 
@@ -149,6 +150,8 @@ echo "done"
 
 echo "installing knock.py"
 git clone https://github.com/guelfoweb/knock.git
+cd knock
+sudo python setup.py install
 cd ~/tools/
 echo "done"
 
