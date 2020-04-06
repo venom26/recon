@@ -189,6 +189,11 @@ pip install -r requirements.txt
 cd ~/tools/
 echo "done"
 
+cd ~/tools
+echo "Getting smuggler.py"
+wget https://raw.githubusercontent.com/gwen001/pentest-tools/master/smuggler.py
+echo "Done"
+
 echo "installing httprobe"
 go get -u github.com/tomnomnom/httprobe 
 echo "done"
