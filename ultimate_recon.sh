@@ -43,17 +43,17 @@ whatweb -i alive.txt | tee -a whatweb_op.txt
 mkdir wayback_data
 cd wayback_data
 for i in $(cat ../all.txt);do echo $i | waybackurls ;done | tee -a wb.txt
-cat wb.txt  | sort -u | unfurl --unique keys > paramlist.txt
+cat wb.txt  | sort -u | unfurl --unique keys | tee -a paramlist.txt
 
-cat wb.txt  | sort -u | grep -P "\w+\.js(\?|$)" | sort -u > jsurls.txt
+cat wb.txt u | grep -P "\w+\.js(\?|$)" | sort -u | tee -a jsurls.txt
 
-cat wb.txt  | sort -u | grep -P "\w+\.php(\?|$) | sort -u " > phpurls.txt
+cat wb.txt  | grep -P "\w+\.php(\?|$) | sort -u " | tee -a phpurls.txt
 
-cat wb.txt  | sort -u | grep -P "\w+\.aspx(\?|$) | sort -u " > aspxurls.txt
+cat wb.txt  | grep -P "\w+\.aspx(\?|$) | sort -u " | tee -a aspxurls.txt
 
-cat wb.txt  | sort -u | grep -P "\w+\.jsp(\?|$) | sort -u " > jspurls.txt
+cat wb.txt  | grep -P "\w+\.jsp(\?|$) | sort -u " | tee -a jspurls.txt
 
-cat wb.txt  | sort -u | grep -P "\w+\.txt(\?|$) | sort -u " > robots.txt
+cat wb.txt  | grep -P "\w+\.txt(\?|$) | sort -u " | tee -a robots.txt
 
 cd ..
 
