@@ -117,11 +117,9 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
-echo "installing wpscan"
-git clone https://github.com/wpscanteam/wpscan.git
-cd wpscan*
-sudo gem install bundler && bundle install --without test
-cd ~/tools/
+echo "Installing nuclei"
+GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/cmd/nuclei
+git clone https://github.com/projectdiscovery/nuclei-templates.git
 echo "done"
 
 echo "installing dirsearch"
