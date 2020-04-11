@@ -20,7 +20,7 @@ sudo apt-get install -y git
 sudo apt-get install -y rename
 sudo apt-get install -y xargs
 sudo apt-get install -y snapd
-sudo snapd start
+sudo systemctl start snap
 echo 'PATH=$PATH:/snap/bin' >> ~/.bashrc
 
 #install rust
@@ -132,6 +132,11 @@ echo "done"
 echo "installing virtual host discovery"
 git clone https://github.com/jobertabma/virtual-host-discovery.git
 cd ~/tools/
+echo "done"
+
+#installing meg
+echo "Installing meg"
+go get -u github.com/tomnomnom/meg
 echo "done"
 
 echo "installing findomain"
