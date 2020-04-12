@@ -15,7 +15,7 @@ certdata(){
 	for i in "${arr[@]}"
 	do
 		#get a list of domains based on our patterns in the array
-		crtsh=$(curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | sort -u  | tee -a rawdata/$1-crtsh.txt )
+		crtsh=$(curl -s https://crt.sh\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | grep -iv '*' |grep -iv '@' | grep -iv '\--' | sort -u | tee -a rawdata/$1-crtsh.txt )
 	done
 		#get a list of domains from certspotter
 		certspotter=$(curl -s https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep -w $1\$ | tee rawdata/$1-certspotter.txt)
