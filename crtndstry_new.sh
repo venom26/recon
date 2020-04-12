@@ -21,9 +21,9 @@ certdata(){
 		certspotter=$(curl -s https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep -w $1\$ | tee rawdata/$1-certspotter.txt)
 		#get a list of domains from digicert
 		bufferover=$(curl -ss https://dns.bufferover.run/dns?q=.$1 | jq '.FDNS_A[]' | sed 's/^\".*.,//g' | sed 's/\"$//g'  | sort -u | tee -a rawdata/$1-bufferover.txt
-	echo "$crtsh"
-	echo "$certspotter"
-	echo "$bufferover"
+	#echo "$crtsh"
+	#echo "$certspotter"
+	#echo "$bufferover"
 }
 
 
