@@ -9,6 +9,10 @@ findomain -t $1 -u $CUR_DIR/domains.txt
 echo "######Starting Sublist3r######"
 sublist3r -d $1 -v -o $CUR_DIR/domains.txt
 
+#starting subfinder
+echo "#######Starting Subfiner####"
+subfinder -d $domain -o $CUR_DIR/domains.txt
+
 #running assetfinder
 echo "######Starting assetfinder######"
 assetfinder --subs-only $1 | tee -a $CUR_DIR/domains.txt
