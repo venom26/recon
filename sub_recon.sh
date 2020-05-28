@@ -40,3 +40,9 @@ cat resolved.txt | httprobe -c 40 | tee -a alive2.txt
 cat alive2.txt | sort -u |tee -a alive.txt
 rm -rf alive2.txt 
 rm -rf domains.txt
+
+mkdir js
+cat alive.txt | subjs| tee -a js/hosts
+cd js
+echo "?" >> paths
+meg --verbose
