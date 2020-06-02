@@ -11,7 +11,7 @@ sublist3r -d $1 -v -o $CUR_DIR/domains.txt
 
 #starting subfinder
 echo "#######Starting Subfiner####"
-subfinder -d $domain -o $CUR_DIR/domains.txt
+subfinder -d $domain | tee -a  $CUR_DIR/domains.txt
 
 #running assetfinder
 echo "######Starting assetfinder######"
@@ -40,6 +40,13 @@ cat resolved.txt | httprobe -c 40 | tee -a alive2.txt
 cat alive2.txt | sort -u |tee -a alive.txt
 rm -rf alive2.txt 
 rm -rf domains.txt
+
+cat all.txt | httpx -title -content-length -status-code | tee -a httpx.txt 
+cat all.txt | xargs -n1 -P4 -I{} waybackurls{} | tee -a wb.txt
+cat all.txt | xargs -n1 -P4 -I{} gau -subs {} | tee -a wb.txt
+cat wb.txt | sort -u | tee -a wb2.txt
+rm -rf wb.txt
+mv wb2.txt wb.txt
 
 mkdir js
 cat alive.txt | subjs| tee -a js/hosts
