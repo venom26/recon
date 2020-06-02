@@ -11,7 +11,7 @@ sublist3r -d $1 -v -o $CUR_DIR/domains.txt
 
 #starting subfinder
 echo "#######Starting Subfiner####"
-subfinder -d $domain | tee -a  $CUR_DIR/domains.txt
+subfinder -d $1 -silent | tee -a  $CUR_DIR/domains.txt
 
 #running assetfinder
 echo "######Starting assetfinder######"
