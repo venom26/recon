@@ -35,6 +35,12 @@ cat bruteforced.txt | tee -a all.txt
 
 shuffledns -d $1 -list all.txt -r ~/tools/subbrute/resolvers.txt | tee -a resolved.txt
 
+echo "####Gathering IP Addresses####"
+cat all.txt | xargs -n1 -P10 -I{} python3 ~/tools/recon/getip.py {} |grep IP | awk '{print $2}' | sort -u | tee -a ip.txt
+
+echo "####Getting Shodan Info####"
+cat ip.txt | python3 ~/tools/Shodanfy.py/shodanfy.py --stdin --getvuln --getports --getinfo --getbanner | tee -a shodan.txt
+
 cat all.txt | httprobe -c 40 | tee -a alive2.txt
 cat resolved.txt | httprobe -c 40 | tee -a alive2.txt
 cat alive2.txt | sort -u |tee -a alive.txt
