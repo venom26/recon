@@ -48,7 +48,7 @@ rm -rf alive2.txt
 rm -rf domains.txt
 
 cat all.txt | httpx -title -content-length -status-code | tee -a httpx.txt 
-cat all.txt | xargs -n1 -P4 -I{} waybackurls{} | tee -a wb.txt
+cat all.txt | xargs -n1 -P4 -I{} waybackurls {} | tee -a wb.txt
 cat all.txt | xargs -n1 -P4 -I{} gau -subs {} | tee -a wb.txt
 cat wb.txt | sort -u | tee -a wb2.txt
 rm -rf wb.txt
