@@ -55,7 +55,7 @@ rm -rf wb.txt
 mv wb2.txt wb.txt
 
 mkdir js
-cat alive.txt | subjs| tee -a js/hosts
+cat alive.txt | subjs| tee -a js/js.txt
 cd js
-echo "?" >> paths
-meg --verbose
+cat js.txt | concurl -c 5
+cd -
