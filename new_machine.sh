@@ -214,6 +214,10 @@ echo "installing crtndstry"
 git clone https://github.com/nahamsec/crtndstry.git
 echo "done"
 
+echo "Installing Concurl"
+go get -u github.com/tomnomnom/concurl
+echo "done"
+
 echo "installing subfinder"
 source ~/.bashrc
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
