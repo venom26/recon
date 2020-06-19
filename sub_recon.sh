@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "####Don't Forget to add your github Token #####"
+sleep 5
+
 CUR_DIR=$(pwd)
 #starting findomain
 echo "######Starting Findomain#########"
@@ -59,3 +62,15 @@ cat alive.txt | subjs| tee -a js/js.txt
 cd js
 cat js.txt | concurl -c 5
 cd -
+
+echo "####Starting Github Subdomain Scanning #####"
+mkdir github_recon
+for i in {1..5};do python3 github-subdomains.py -t '' -d $1 | tee -a $CUR_DIR/github_recon/github_subs.txt ;done
+
+
+echo "####Starting altdns####"
+mkdir altdns_op
+cd altdns_op
+altdns -i ../all.txt -o data_output -w ~/tools/recon/patterns.txt -r -s results_output.txt
+cd ..
+
