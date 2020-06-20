@@ -1,0 +1,4 @@
+{
+	"flags": "-HnroE",
+	"pattern": "NPM_TOKEN|TOKEN(\'|\"|\ |=)|:x-oauth-basic|([A-Za-z0-9_]{10,}\:[A-Za-z0-9_-]{10,})"
+}
