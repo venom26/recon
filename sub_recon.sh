@@ -65,7 +65,7 @@ cd -
 
 echo "####Starting Github Subdomain Scanning #####"
 mkdir github_recon
-for i in {1..5};do python3 github-subdomains.py -t '' -d $1 | tee -a $CUR_DIR/github_recon/github_subs.txt ;done
+for i in {1..5};do python3 ~/tools/github-subdomains.py -t '' -d $1 | tee -a $CUR_DIR/github_recon/github_subs.txt ;done
 
 
 echo "####Starting altdns####"
