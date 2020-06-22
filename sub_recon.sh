@@ -61,6 +61,8 @@ mkdir js
 cat alive.txt | subjs| tee -a js/js.txt
 cd js
 cat js.txt | concurl -c 5
+cat ../wb.txt |egrep -iv '\.json'|grep -iE '\.js'|antiburl|awk '{print $4}' | xargs -I %% bash -c 'python3 ~/tools/SecretFinder/SecretFinder.py -i %% -o cli' 2> /dev/null | tee -a secrets.txt
+cat js.txt |egrep -iv '\.json'|grep -iE '\.js'|antiburl|awk '{print $4}' | xargs -I %% bash -c 'python3 ~/tools/SecretFinder/SecretFinder.py -i %% -o cli' 2> /dev/null | tee -a secrets.txt
 cd -
 
 echo "####Starting Github Subdomain Scanning #####"
