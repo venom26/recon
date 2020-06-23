@@ -85,7 +85,7 @@ echo "done"
 #inatsll antiburl
 echo "Downloading hacks and installing antiburl"
 git clone https://github.com/tomnomnom/hacks.git
-cd anti-burl
+cd hacks/anti-burl
 go build main.go
 mv main antiburl
 sudo cp antiburl /usr/bin
