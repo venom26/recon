@@ -108,6 +108,10 @@ echo "Installing ffuf"
 go get github.com/ffuf/ffuf
 echo "done"
 
+#install concurl
+echo "Installing Concurl"
+go get -u github.com/tomnomnom/concurl
+
 #install chromium
 echo "Installing Chromium"
 sudo snap install chromium
