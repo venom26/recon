@@ -20,6 +20,7 @@ sudo apt-get install -y git
 sudo apt-get install -y rename
 sudo apt-get install -y xargs
 sudo apt-get install -y snapd
+pip3 install dnsgen
 sudo systemctl start snap
 echo 'PATH=$PATH:/snap/bin' >> ~/.bashrc
 
@@ -80,6 +81,14 @@ echo "done"
 echo "Installing gau"
 go get -u github.com/lc/gau
 echo "done"
+
+#inatsll antiburl
+echo "Downloading hacks and installing antiburl"
+git clone https://github.com/tomnomnom/hacks.git
+cd anti-burl
+go build main.go
+mv main antiburl
+sudo cp antiburl /usr/bin
 
 #installing kxss
 echo "installing kxss"
