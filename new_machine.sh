@@ -21,6 +21,8 @@ sudo apt-get install -y rename
 sudo apt-get install -y xargs
 sudo apt-get install -y snapd
 pip3 install dnsgen
+pip install colored
+pip3 install colored
 sudo systemctl start snap
 echo 'PATH=$PATH:/snap/bin' >> ~/.bashrc
 
@@ -111,6 +113,10 @@ echo "done"
 #install concurl
 echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
+
+#install subjs
+echo "installing subjs"
+GO111MODULE=on go get -u -v github.com/lc/subjs
 
 #install chromium
 echo "Installing Chromium"
