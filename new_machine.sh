@@ -88,7 +88,7 @@ git clone https://github.com/tomnomnom/hacks.git
 cd hacks/anti-burl
 go build main.go
 mv main antiburl
-sudo cp antiburl /usr/bin
+sudo cp antiburl /usr/bin/
 
 #installing kxss
 echo "installing kxss"
