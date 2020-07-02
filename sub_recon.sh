@@ -58,12 +58,19 @@ cat $CUR_DIR/alive2.txt | sort -u |tee -a $CUR_DIR/alive.txt
 rm -rf $CUR_DIR/alive2.txt 
 rm -rf $CUR_DIR/domains.txt
 
+mkdir wayback-data
+
 cat $CUR_DIR/all.txt | httpx -title -content-length -status-code | tee -a $CUR_DIR/httpx.txt 
-cat $CUR_DIR/all.txt | xargs -n1 -P4 -I{} waybackurls {} | tee -a $CUR_DIR/wb.txt
-cat $CUR_DIR/all.txt | xargs -n1 -P4 -I{} gau -subs {} | tee -a $CUR_DIR/wb.txt
-cat $CUR_DIR/wb.txt | sort -u | tee -a $CUR_DIR/wb2.txt
-rm -rf $CUR_DIR/wb.txt
-mv $CUR_DIR/wb2.txt $CUR_DIR/wb.txt
+cat $CUR_DIR/all.txt | xargs -n1 -P4 -I{} waybackurls {} | tee -a $CUR_DIR/wayback-data/wb.txt
+cat $CUR_DIR/all.txt | xargs -n1 -P4 -I{} gau -subs {} | tee -a $CUR_DIR/wayback-data/wb.txt
+cat $CUR_DIR/wayback-data/wb.txt | sort -u | tee -a $CUR_DIR/wayback-data/wb2.txt
+rm -rf $CUR_DIR/wayback-data/wb.txt
+mv $CUR_DIR/wayback-data/wb2.txt $CUR_DIR/wayback-data/wb.txt
+cat $CUR_DIR/wayback-data/wb.txt | unfurl --unique keys | tee -a  $CUR_DIR/wayback-data/paramlist.txt
+cat $CUR_DIR/wayback-data/wb.txt| grep -P "\w+\.js(\?|$) | sort -u" | tee -a $CUR_DIR/wayback-data/jsurls.txt
+cat $CUR_DIR/wayback-data/wb.txt | grep -P "\w+\.php(\?|$) | sort -u" | tee -a  $CUR_DIR/wayback-data/phpurls.txt
+cat $CUR_DIR/wayback-data/wb.txt | grep -P "\w+\.aspx(\?|$) | sort -u" | tee -a  $CUR_DIR/wayback-data/aspxurls.txt
+cat $CUR_DIR/wayback-data/wb.txt| grep -P "\w+\.jsp(\?|$) | sort -u" | tee -a  $CUR_DIR/wayback-data/jspurls.txt
 
 mkdir js
 cat $CUR_DIR/alive.txt | subjs| tee -a js/js.txt
