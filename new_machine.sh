@@ -136,6 +136,13 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
+echo "installing subdomain-takeover detection tool"
+git clone https://github.com/m4ll0k/takeover.git
+cd takeover
+python3 setup.py install
+echo "done"
+cd ~/tools/
+
 echo "Installing nuclei"
 GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/cmd/nuclei
 git clone https://github.com/projectdiscovery/nuclei-templates.git
