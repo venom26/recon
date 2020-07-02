@@ -237,6 +237,10 @@ echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 echo "done"
 
+echo "installing gospider"
+go get -u github.com/jaeles-project/gospider
+echo "Done"
+
 echo "installing subfinder"
 source ~/.bashrc
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
