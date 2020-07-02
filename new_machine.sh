@@ -137,9 +137,7 @@ cd ~/tools/
 echo "done"
 
 echo "installing subdomain-takeover detection tool"
-git clone https://github.com/m4ll0k/takeover.git
-cd takeover
-python3 setup.py install
+go get github.com/haccer/subjack
 echo "done"
 cd ~/tools/
 
