@@ -146,6 +146,11 @@ git clone https://github.com/maurosoria/dirsearch.git
 cd ~/tools/
 echo "done"
 
+echo "Installing secretfinder"
+git clone https://github.com/m4ll0k/SecretFinder.git
+cd ~/tools/
+echo "done"
+
 echo "installing virtual host discovery"
 git clone https://github.com/jobertabma/virtual-host-discovery.git
 cd ~/tools/
