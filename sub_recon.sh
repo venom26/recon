@@ -60,7 +60,7 @@ rm -rf $CUR_DIR/domains.txt
 
 mkdir wayback-data
 
-cat $CUR_DIR/all.txt | httpx -title -content-length -status-code | tee -a $CUR_DIR/httpx.txt 
+cat $CUR_DIR/all.txt | httpx -title -content-length -status-code -vhost | tee -a $CUR_DIR/httpx.txt 
 cat $CUR_DIR/all.txt | xargs -n1 -P4 -I{} waybackurls {} | tee -a $CUR_DIR/wayback-data/wb.txt
 cat $CUR_DIR/all.txt | xargs -n1 -P4 -I{} gau -subs {} | tee -a $CUR_DIR/wayback-data/wb.txt
 cat $CUR_DIR/wayback-data/wb.txt | sort -u | tee -a $CUR_DIR/wayback-data/wb2.txt
