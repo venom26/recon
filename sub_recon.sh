@@ -90,3 +90,8 @@ cd $CUR_DIR/altdns_op
 altdns -i ../all.txt -o data_output -w ~/tools/recon/patterns.txt -r -s results_output.txt
 cd ..
 
+echo "Starting FFUF"
+mkdir $CUR_DIR/ffuf_op
+for i in $(cat $CUR_DIR/alive.txt);do ffuf -u $i/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200 -t 60 -fs 0 -o ffuf_op/$ffufop.html -of html -t 60;done
+
+gospider -S $CUR_DIR/alive.txt --depth 3 --no-redirect -t 50 -c 3 -o gospider_out
