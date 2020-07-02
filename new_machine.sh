@@ -259,5 +259,9 @@ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
 cd -
 
+cd ~/tools
+wget https://raw.githubusercontent.com/gwen001/github-search/master/github-endpoints.py
+wget https://raw.githubusercontent.com/gwen001/github-search/master/github-subdomains.py
+
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
