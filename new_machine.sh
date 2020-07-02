@@ -248,5 +248,11 @@ cd $GOPATH/src/github.com/OWASP/Amass
 go install ./...
 echo "done"
 
+echo "Creating Wordlist"
+cd ~/tools/dirsearch/db/
+wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
+
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
