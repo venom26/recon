@@ -77,6 +77,8 @@ cd -
 echo "####Starting Naabu For Port Scanning####"
 for i in $(cat $CUR_DIR/ip.txt);do naabu -silent -host $i -json;done | tee -a $CUR_DIR/ports.txt
 
+echo "checking for subdomain takeovers"
+subjack -w $CUR_DIR/all.txt -t 100 -timeout 30 -o takeover.txt -ssl
 
 echo "####Starting Github Subdomain Scanning #####"
 mkdir $CUR_DIR/github_recon
