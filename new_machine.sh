@@ -161,6 +161,12 @@ git clone https://github.com/jobertabma/virtual-host-discovery.git
 cd ~/tools/
 echo "done"
 
+echo "installing Linkfinder"
+git clone https://github.com/GerbenJavado/LinkFinder.git
+cd LinkFinder
+pip3 install -r requirements.txt
+cd ~/tools/
+
 #installing meg
 echo "Installing meg"
 go get -u github.com/tomnomnom/meg
@@ -175,6 +181,8 @@ echo "installing relative-url-extractor"
 git clone https://github.com/jobertabma/relative-url-extractor.git
 cd ~/tools/
 echo "done"
+
+
 
 echo "installing sqlmap"
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
