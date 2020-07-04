@@ -255,6 +255,10 @@ echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 echo "done"
 
+echo "Installing altdns"
+pip install py-altdns
+echo "done"
+
 echo "installing gospider"
 go get -u github.com/jaeles-project/gospider
 echo "Done"
