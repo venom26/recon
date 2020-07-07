@@ -2,6 +2,8 @@
 
 mkdir nuclei_op
 nuclei -l alive.txt -t "/root/tools/nuclei-templates/cves/*.yaml" -c 60 -o nuclei_op/cves.txt
+nuclei -l alive.txt -t "/root/tools/nuclei-templates/brute-force/*.yaml" -c 60 -o nuclei_op/brute-force.txt
+nuclei -l alive.txt -t "/root/tools/nuclei-templates/workflows/*.yaml" -c 60 -o nuclei_op/workflows.txt
 nuclei -l alive.txt -t "/root/tools/nuclei-templates/files/*.yaml" -c 60 -o nuclei_op/files.txt
 nuclei -l alive.txt -t "/root/tools/nuclei-templates/panels/*.yaml" -c 60 -o nuclei_op/panels.txt
 nuclei -l alive.txt -t "/root/tools/nuclei-templates/security-misconfiguration/*.yaml" -c 60 -o nuclei_op/security-misconfiguration.txt
