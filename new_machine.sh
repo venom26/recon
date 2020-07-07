@@ -196,6 +196,11 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
+echo "Installing Shodanfy"
+git clone https://github.com/m4ll0k/Shodanfy.py.git
+cd ~/tools/
+echo "done"
+
 echo "installing lazyrecon"
 git clone https://github.com/nahamsec/lazyrecon.git
 cd ~/tools/
