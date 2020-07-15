@@ -114,12 +114,7 @@ echo "done"
 echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 
-#installing smuggler
-echo "Installing Smuggler"
-cd ~/tools/
-git clone https://github.com/defparam/smuggler.git
-echo "Done"
-cd -
+
 #install subjs
 echo "installing subjs"
 GO111MODULE=on go get -u -v github.com/lc/subjs
