@@ -68,7 +68,7 @@ fi
 #create a tools folder in ~/
 mkdir ~/tools
 cd ~/tools/
-
+pip install py-altdns
 #install aquatone
 echo "Installing Aquatone"
 go get github.com/michenriksen/aquatone
