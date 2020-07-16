@@ -178,7 +178,9 @@ git clone https://github.com/jobertabma/relative-url-extractor.git
 cd ~/tools/
 echo "done"
 
-
+echo "Installing Nabu"
+GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
+echo "done"
 
 echo "installing sqlmap"
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
