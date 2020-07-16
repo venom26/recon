@@ -124,11 +124,6 @@ echo "Installing Chromium"
 sudo snap install chromium
 echo "done"
 
-#install sublime-text
-echo "Installing Sublime-Text"
-sudo snap install sublime-text --classic
-echo "done"
-
 echo "installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
