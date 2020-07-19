@@ -288,6 +288,7 @@ cd -
 cd ~/tools
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-endpoints.py
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-subdomains.py
+wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/subdomains/subdomains.txt
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
