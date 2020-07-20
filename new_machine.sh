@@ -279,6 +279,8 @@ echo "done"
 
 echo "Creating Wordlist"
 cd ~/tools/dirsearch/db/
+wget https://github.com/xyele/hackerone_wordlist/releases/download/beta/wordlists.zip
+unzip wordlists.zip
 wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
