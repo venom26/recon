@@ -281,6 +281,8 @@ echo "Creating Wordlist"
 cd ~/tools/dirsearch/db/
 wget https://github.com/xyele/hackerone_wordlist/releases/download/beta/wordlists.zip
 unzip wordlists.zip
+cp ~/tools/dirsearch/db/apiwords.txt .
+cp ~/tools/recon/ffuf_extension.txt .
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/deepmagic.com-prefixes-top50000.txt
 wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
