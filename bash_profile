@@ -67,3 +67,6 @@ cd ~/tools/dirsearch/db
 fufextension(){
 ffuf -u $1/FUZZ -mc 200,301,302,403,401 -t 150 -w ~/tools/dirsearch/db/ffuf_extension.txt -e php,asp,aspx,jsp,py,txt,conf,config,bak,backup,swp,old,db,sql,json,xml,log
 }
+fufthis(){
+ffuf -u $1/FUZZ -mc 200,301,302,403,401 -t 150 -w $(pwd)/wordlist.txt -e php,asp,aspx,jsp,txt,conf,config,bak,backup,old,db,sql,json,xml,log
+}
