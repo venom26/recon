@@ -234,7 +234,7 @@
 .histfile
 .history
 .hpc
-.hsenv
+.hsenv 
 .ht_wsr.txt
 .hta
 .htaccess
@@ -3420,6 +3420,9 @@ AuxiliaryConsoleOpen
 AuxiliaryConsolePrint
 AuxiliaryConsoleShow
 B
+/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd
+/+CSCOE+/logon.html
+/+CSCOU+/csco_logo.gif
 BBookService
 BGQueueButtonAndColumnStatus
 BG_SelectFrame
