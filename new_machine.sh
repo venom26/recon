@@ -288,6 +288,8 @@ wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/w
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/spring-boot.txt
+wget https://raw.githubusercontent.com/milo2012/pathbrute/master/defaultPaths.txt
+wget https://raw.githubusercontent.com/milo2012/pathbrute/master/cvePaths.txt
 cd -
 
 cd ~/tools
