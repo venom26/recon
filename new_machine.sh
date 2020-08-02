@@ -109,6 +109,11 @@ go get -u github.com/tomnomnom/fff
 echo "Installing ffuf"
 go get github.com/ffuf/ffuf
 echo "done"
+#install gf
+echo "Installing gf"
+go get -u github.com/tomnomnom/gf
+echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc
+cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
 #install concurl
 echo "Installing Concurl"
@@ -151,6 +156,13 @@ echo "Installing secretfinder"
 git clone https://github.com/m4ll0k/SecretFinder.git
 cd ~/tools/
 echo "done"
+
+echo "Installing Gf-Templates"
+git clone https://github.com/1ndianl33t/Gf-Patterns.git
+cd Gf-Patterns/
+cp *.json ~/.gf
+cd ~/tools/
+echo"Done"
 
 echo "installing virtual host discovery"
 git clone https://github.com/jobertabma/virtual-host-discovery.git
