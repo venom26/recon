@@ -137,6 +137,11 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
+echo "Installing Telegram-Bot-Cli"
+git clone https://github.com/ShutdownRepo/telegram-bot-cli.git
+cd ~/tools/
+echo "Done"
+
 echo "installing subdomain-takeover detection tool"
 go get github.com/haccer/subjack
 echo "done"
