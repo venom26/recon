@@ -185,6 +185,11 @@ echo "Installing meg"
 go get -u github.com/tomnomnom/meg
 echo "done"
 
+#installing shuffledns
+echo "Installing Shuffledns"
+GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns
+echo "Done"
+
 echo "installing findomain"
 git clone https://github.com/Edu4rdSHL/findomain.git
 cd ~/tools/
