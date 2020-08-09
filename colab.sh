@@ -728,6 +728,11 @@ go get -u github.com/tomnomnom/gf
 echo "${BLUE} done${RESET}"
 echo ""
 
+echo "${BLUE} installing gospider${RESET}"
+go get -u github.com/jaeles-project/gospider
+echo "${BLUE} done${RESET}"
+echo ""
+
 echo "${BLUE} installing httprobe${RESET}"
 go get -u github.com/tomnomnom/httprobe
 echo "${BLUE} done${RESET}"
