@@ -141,6 +141,7 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
+
 echo "Installing Telegram-Bot-Cli"
 git clone https://github.com/ShutdownRepo/telegram-bot-cli.git
 cd ~/tools/
@@ -285,7 +286,8 @@ go get -u github.com/tomnomnom/concurl
 echo "done"
 
 echo "Installing altdns"
-pip install py-altdns
+cd ~/tools/
+git clone https://github.com/avlidienbrunn/altdns.git
 echo "done"
 
 echo "installing gospider"
