@@ -74,6 +74,10 @@ echo "Installing Aquatone"
 go get github.com/michenriksen/aquatone
 echo "done"
 
+echo "Installing Chromium-Browser"
+sudo apt install chromium-browser -y
+echo "Done"
+
 #install assetfinder
 echo "Installing Assetfinder"
 go get -u github.com/tomnomnom/assetfinder 
