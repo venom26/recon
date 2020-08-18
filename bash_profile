@@ -3,11 +3,11 @@ findomain -t $1
 }
 
 fuf(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 50
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 100
 }
 
 fufapi(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/apiwords.txt -mc 200 -t 50
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/apiwords.txt -mc 200 -t 100
 }
 
 arjun(){
@@ -44,11 +44,11 @@ sudo python3 dirsearch.py -u $1 -e htm,html,xml,js,json,zip,asp,aspx,php,bak,sql
 cd -
 }
 fuffiles(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-files.txt -mc 200,301,302 -t 50
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-files.txt -mc 200,301,302 -t150
 }
 
 fufdir(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-directories.txt -mc 200,301,302,403 -t 70
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-directories.txt -mc 200,301,302,403 -t 170
 }
 
 dirsearch(){
@@ -69,4 +69,7 @@ ffuf -u $1/FUZZ -mc 200,301,302,403,401 -t 150 -w ~/tools/dirsearch/db/ffuf_exte
 }
 fufthis(){
 ffuf -u $1/FUZZ -mc 200,301,302,403,401 -t 150 -w $(pwd)/wordlist.txt -e .zip,.php,.asp,.aspx,.jsp,.txt,.conf,.config,.bak,.backup,.old,.db,.sql,.json,.xml,.log
+}
+sf(){
+subfinder -d $1 -silent | httpx -status-code -web-server -title -silent -threads 100
 }
