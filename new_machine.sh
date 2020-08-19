@@ -326,6 +326,7 @@ cd -
 
 cd ~/tools
 wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords.py
+wget https://raw.githubusercontent.com/maverickNerd/naabu/master/scripts/naabu2nmap.sh
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-endpoints.py
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-subdomains.py
 wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/subdomains/subdomains.txt
