@@ -170,3 +170,9 @@ cat *.js | grep -o -E `(https?://)?/?[{}a-z0-9A-Z_\.-]{2,}/[{}/a-z0-9A-Z_\.-]+`
 
 #replacing \n with new line
 cat file | awk '{gsub(/\\n/,"\n")}1'
+
+
+#installing python3.6 on ubuntu 16.04 aws
+https://vsupalov.com/developing-with-python3-6-on-ubuntu-16-04/
+then to install python3.6-pip
+sudo python3.6 -m pip install -U pip
