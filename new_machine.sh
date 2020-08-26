@@ -29,7 +29,7 @@ echo 'PATH=$PATH:/snap/bin' >> ~/.bashrc
 #install rust
 echo "Installing rust"
 curl https://sh.rustup.rs -sSf | sh
-"Done"
+echo "Done"
 
 #install go
 if [[ -z "$GOPATH" ]];then
