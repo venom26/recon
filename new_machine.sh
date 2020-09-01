@@ -257,6 +257,11 @@ sudo pip3 install -r requirments.txt
 cd ..
 echo "DONE"
 
+echo "Installing FavFreak"
+git clone https://github.com/devanshbatham/FavFreak.git
+python3 -m pip install mmh3
+echo "Done"
+
 echo "installing asnlookup"
 git clone https://github.com/yassineaboukir/asnlookup.git
 cd ~/tools/asnlookup
