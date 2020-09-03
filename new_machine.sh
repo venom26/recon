@@ -304,6 +304,10 @@ echo "installing crtndstry"
 git clone https://github.com/nahamsec/crtndstry.git
 echo "done"
 
+echo "Installing anew"
+go get -u github.com/tomnomnom/anew
+echo "Done"
+
 echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 echo "done"
