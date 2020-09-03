@@ -218,6 +218,15 @@ echo "Installing Nabu"
 GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
 echo "done"
 
+echo "Installing Jaeles"
+GO111MODULE=on go get github.com/jaeles-project/jaeles
+echo "Done"
+
+echo "Installing Jaeles-Repos"
+git clone https://github.com/jaeles-project/jaeles-signatures.git
+echo "Done"
+cd ~/tools/
+
 echo "installing sqlmap"
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 cd ~/tools/
