@@ -178,6 +178,11 @@ cp *.json ~/.gf
 cd ~/tools/
 echo"Done"
 
+echo "Installing arjun"
+git clone https://github.com/s0md3v/Arjun.git
+echo "Done"
+cd ~/tools/
+
 echo "installing virtual host discovery"
 git clone https://github.com/jobertabma/virtual-host-discovery.git
 cd ~/tools/
