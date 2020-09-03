@@ -199,6 +199,10 @@ echo "Installing meg"
 go get -u github.com/tomnomnom/meg
 echo "done"
 
+echo "Installing Dnsprobe"
+GO111MODULE=on go get -u -v github.com/projectdiscovery/dnsprobe
+echo "Done"
+
 #installing shuffledns
 echo "Installing Shuffledns"
 GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns
