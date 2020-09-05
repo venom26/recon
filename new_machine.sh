@@ -166,6 +166,14 @@ git clone https://github.com/maurosoria/dirsearch.git
 cd ~/tools/
 echo "done"
 
+echo "Installing Masscan"
+sudo apt-get install git gcc make libpcap-dev
+git clone https://github.com/robertdavidgraham/masscan
+cd masscan/
+make
+cd ~/tools/
+echo "Done"
+
 echo "Installing secretfinder"
 git clone https://github.com/m4ll0k/SecretFinder.git
 cd ~/tools/
