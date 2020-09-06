@@ -367,6 +367,9 @@ wget https://raw.githubusercontent.com/maverickNerd/naabu/master/scripts/naabu2n
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-endpoints.py
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-subdomains.py
 wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/subdomains/subdomains.txt
+wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
+mv all.txt jhaddix_all.txt
+wget https://raw.githubusercontent.com/BBerastegui/fresh-dns-servers/master/resolvers.txt -O resolvers.txt
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
