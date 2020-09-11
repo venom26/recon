@@ -20,6 +20,8 @@ sudo apt-get install -y git
 sudo apt-get install -y rename
 sudo apt-get install -y xargs
 sudo apt-get install -y snapd
+sudo apt-get install gem -y
+sudo gem install wpscan
 pip3 install dnsgen
 pip install colored
 pip3 install colored
