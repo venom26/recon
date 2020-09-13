@@ -1,4 +1,5 @@
 /jmx-console/HtmlAdaptor?action=inspectMBean&name=jboss.system:type=ServerInfo
+/ReportServer/pages/ReportViewer.aspx
 /web-console/ServerInfo.jsp
 /invoker/JMXInvokerServlet
 /admin-console/
