@@ -3,7 +3,7 @@ findomain -t $1
 }
 
 fuf(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 100
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 100 -D -e '.php','.html','.jsp','.aspx','.zip','.sql','.bak','.BAK'
 }
 
 fufapi(){
