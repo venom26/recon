@@ -354,6 +354,7 @@ echo "done"
 echo "Creating Wordlist"
 cd ~/tools/dirsearch/db/
 wget https://github.com/xyele/hackerone_wordlist/releases/download/beta/wordlists.zip
+https://gist.githubusercontent.com/tomnomnom/57af04c3422aac8c6f04451a4c1daa51/raw/9f551e023ff17d093dcb9f8b355c3af55827cb34/short-wordlist.txt -O shortwords.txt
 unzip wordlists.zip
 cp ~/tools/dirsearch/db/apiwords.txt .
 cp ~/tools/recon/ffuf_extension.txt .
