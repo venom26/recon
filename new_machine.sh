@@ -188,6 +188,10 @@ git clone https://github.com/m4ll0k/SecretFinder.git
 cd ~/tools/
 echo "done"
 
+echo "Installing Crobat"
+go get -u github.com/cgboal/sonarsearch/crobat
+echo "Done"
+
 echo "Installing Gf-Templates"
 git clone https://github.com/1ndianl33t/Gf-Patterns.git
 cd Gf-Patterns/
