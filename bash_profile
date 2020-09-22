@@ -3,11 +3,11 @@ findomain -t $1
 }
 
 fuf(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 100 -D -e '.php','.html','.jsp','.aspx','.zip','.sql','.bak','.BAK'
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 200 -D -e '.php','.html','.jsp','.aspx','.zip','.sql','.bak','.BAK'
 }
 
 fufapi(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/apiwords.txt -mc 200 -t 100
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/apiwords.txt -mc 200 -t 200
 }
 
 arjun(){
@@ -44,11 +44,11 @@ sudo python3 dirsearch.py -u $1 -e htm,html,xml,js,json,zip,asp,aspx,php,bak,sql
 cd -
 }
 fuffiles(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-files.txt -mc 200,301,302 -t150
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-files.txt -mc 200,301,302 -t 200
 }
 
 fufdir(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-directories.txt -mc 200,301,302,403 -t 170
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/raft-large-directories.txt -mc 200,301,302,403 -t 200
 }
 
 dirsearch(){
