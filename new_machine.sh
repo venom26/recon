@@ -258,16 +258,6 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
-echo "Installing Shodanfy"
-git clone https://github.com/m4ll0k/Shodanfy.py.git
-cd ~/tools/
-echo "done"
-
-echo "installing lazyrecon"
-git clone https://github.com/nahamsec/lazyrecon.git
-cd ~/tools/
-echo "done"
-
 echo "installing nmap"
 sudo apt-get install -y nmap
 echo "done"
@@ -293,14 +283,8 @@ echo "DONE"
 echo "Installing FavFreak"
 git clone https://github.com/devanshbatham/FavFreak.git
 python3 -m pip install mmh3
+pip3 install -r FavFreak/requirments.txt
 echo "Done"
-
-echo "installing asnlookup"
-git clone https://github.com/yassineaboukir/asnlookup.git
-cd ~/tools/asnlookup
-pip install -r requirements.txt
-cd ~/tools/
-echo "done"
 
 cd ~/tools
 echo "Getting smuggler.py"
