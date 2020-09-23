@@ -136,6 +136,9 @@ cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 
+echo "Installing Github-Subdomains"
+go get -u github.com/gwen001/github-subdomains
+echo "Done"
 
 #install subjs
 echo "installing subjs"
