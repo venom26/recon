@@ -329,7 +329,7 @@ echo "Done"
 
 echo "installing subfinder"
 source ~/.bashrc
-go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 echo "done"
 
 echo "installing amass"
