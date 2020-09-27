@@ -354,6 +354,7 @@ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/spring-boot.txt
 wget https://raw.githubusercontent.com/milo2012/pathbrute/master/defaultPaths.txt
 wget https://raw.githubusercontent.com/milo2012/pathbrute/master/cvePaths.txt
+cp ~/tools/recon/apiwords.txt .
 cd -
 
 cd ~/tools
