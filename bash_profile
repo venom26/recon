@@ -2,6 +2,10 @@ fd(){
 findomain -t $1
 }
 
+crtsh(){
+curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | sort -u | grep -v '*'
+}
+
 fuf(){
 ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 200 -D -e '.php','.html','.jsp','.aspx','.zip','.sql','.bak','.BAK'
 }
