@@ -7,7 +7,7 @@ curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | aw
 }
 
 fuf(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 200 -D -e '.php','.html','.jsp','.aspx','.zip','.sql','.bak','.BAK'
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 200 -D -e '.php','.html','.jsp','.aspx','.zip','.sql','.bak','.BAK','.json','.xml'
 }
 
 fufapi(){
