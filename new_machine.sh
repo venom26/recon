@@ -130,7 +130,7 @@ echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashr
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
 #install httpx
- GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
+GO111MODULE=auto go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
  echo "Done"
 
 #install concurl
