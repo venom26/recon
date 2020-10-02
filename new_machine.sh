@@ -235,7 +235,7 @@ echo "Done"
 echo "installing findomain"
 git clone https://github.com/Edu4rdSHL/findomain.git
 cd ~/tools/
-echo"done"
+echo "done"
 
 echo "installing relative-url-extractor"
 git clone https://github.com/jobertabma/relative-url-extractor.git
