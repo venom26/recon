@@ -357,6 +357,8 @@ wget https://raw.githubusercontent.com/milo2012/pathbrute/master/defaultPaths.tx
 wget https://raw.githubusercontent.com/milo2012/pathbrute/master/cvePaths.txt
 cp ~/tools/recon/apiwords.txt .
 cd -
+cd /usr/share/nmap/scripts/
+sudo wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse
 
 cd ~/tools
 wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords.py
