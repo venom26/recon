@@ -158,6 +158,13 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
+echo "Installing grapX"
+git clone https://github.com/kabilan1290/grapX.git
+cd grapX
+sudo chmod +x grapX
+sudo cp grapX /usr/bin/grapX
+cd ~/tools/
+echo "Done"
 
 echo "Installing Telegram-Bot-Cli"
 git clone https://github.com/ShutdownRepo/telegram-bot-cli.git
