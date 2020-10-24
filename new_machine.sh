@@ -141,6 +141,13 @@ echo "Installing Github-Subdomains"
 go get -u github.com/gwen001/github-subdomains
 echo "Done"
 
+echo "Installing Firece"
+git clone https://github.com/mschwager/fierce.git
+cd fierce
+python -m pip install -r requirements.txt
+python fierce/fierce.py -h
+cd ~/tools
+echo "Done"
 #install subjs
 echo "installing subjs"
 GO111MODULE=on go get -u -v github.com/lc/subjs
