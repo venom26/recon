@@ -19,9 +19,9 @@ XXL=wordlists/haddix-seclists-combined.txt;
 
 # User-defined CLI argument variables
 DOMAIN="";
-SUBDOMAIN_WORDLIST="";
+SUBDOMAIN_WORDLIST="/home/vishnu/tools/chomp-scan/wordlists/subdomains-top1mil-20000.txt";
 SUBDOMAIN_BRUTE=1; # Constant
-CONTENT_WORDLIST="";
+CONTENT_WORDLIST="/home/vishnu/tools/dirsearch/db/dicc.txt";
 CONTENT_DISCOVERY=0;
 SCREENSHOTS=0;
 INFO_GATHERING=0;
@@ -42,30 +42,30 @@ TOOL_PATH="/home/vishnu/bounty/tools";
 TOOL_PATH_SET=0;
 
 # Config file variables
-ENABLE_DNSCAN=0;
-ENABLE_SUBFINDER=0;
-ENABLE_SUBLIST3R=0;
-ENABLE_AMASS=0;
-ENABLE_GOALTDNS=0;
+ENABLE_DNSCAN=1;
+ENABLE_SUBFINDER=1;
+ENABLE_SUBLIST3R=1;
+ENABLE_AMASS=1;
+ENABLE_GOALTDNS=1;
 ENABLE_MASSDNS=1; # Constant
-ENABLE_HTTPROBE=0;
-ENABLE_INCEPTION=0;
-ENABLE_WAYBACKURLS=0;
-ENABLE_FFUF=0;
-ENABLE_GOBUSTER=0;
-ENABLE_DIRSEARCH=0;
-ENABLE_SUBJACK=0;
-ENABLE_CORSTEST=0;
-ENABLE_S3SCANNER=0;
-ENABLE_BFAC=0;
-ENABLE_WHATWEB=0;
-ENABLE_WAFW00F=0;
-ENABLE_NIKTO=0;
-ENABLE_MASSCAN=0;
-ENABLE_NMAP=0;
-ENABLE_SCREENSHOTS=0;
-ENABLE_RESCOPE=0;
-ENABLE_KNOCK=0;
+ENABLE_HTTPROBE=1;
+ENABLE_INCEPTION=1;
+ENABLE_WAYBACKURLS=1;
+ENABLE_FFUF=1;
+ENABLE_GOBUSTER=1;
+ENABLE_DIRSEARCH=1;
+ENABLE_SUBJACK=1;
+ENABLE_CORSTEST=1;
+ENABLE_S3SCANNER=1;
+ENABLE_BFAC=1;
+ENABLE_WHATWEB=1;
+ENABLE_WAFW00F=1;
+ENABLE_NIKTO=1;
+ENABLE_MASSCAN=1;
+ENABLE_NMAP=1;
+ENABLE_SCREENSHOTS=1;
+ENABLE_RESCOPE=1;
+ENABLE_KNOCK=1;
 
 # Other variables
 ALL_IP=all_discovered_ips.txt;
@@ -1158,7 +1158,7 @@ function run_masscan() {
                 else
                                 # Run masscan against all IPs found on all ports
                                 echo -e "$GREEN""[i]$BLUE Running masscan against all $(wc -l "$WORKING_DIR"/$ALL_IP | awk '{print $1}') unique discovered IP addresses.""$NC";
-                                echo -e "$GREEN""[i]$BLUE Command: masscan -p1-65535 -il $WORKING_DIR/$ALL_IP --max-rate=10000 -oL $WORKING_DIR/masscan-output.txt.""$NC";
+                                echo -e "$GREEN""[i]$BLUE Command: masscan -p1-65535 -il $WORKING_DIR/$ALL_IP --rate=7000 -oL $WORKING_DIR/masscan-output.txt.""$NC";
 
                                 # Check that IP list is not empty
                                 IP_COUNT=$(wc -l "$WORKING_DIR"/$ALL_IP | awk '{print $1}');
@@ -1171,7 +1171,7 @@ function run_masscan() {
                                 if [[ "$NOTICA" != "" ]]; then
                                                 run_notica_sudo;
                                 fi
-                                sudo "$MASSCAN" -p1-65535 -iL "$WORKING_DIR"/$ALL_IP --max-rate=10000 -oL "$WORKING_DIR"/root-masscan-output.txt;
+                                sudo "$MASSCAN" -p1-65535 -iL "$WORKING_DIR"/$ALL_IP --rate=7000 -oL "$WORKING_DIR"/root-masscan-output.txt;
                                 END=$(date +%s);
                                 DIFF=$(( END - START ));
                                 echo -e "$GREEN""[i]$BLUE Masscan took $DIFF seconds to run.""$NC";
@@ -1337,13 +1337,13 @@ function run_gobuster() {
                 # Call with domain as $1, wordlist size as $2, and domain list as $3
                 if [[ $3 == $WORKING_DIR/$ALL_RESOLVED ]]; then # Run against all resolvable domains
                                 echo -e "$GREEN""[i]$BLUE Running gobuster against all $(wc -l "$3" | awk '{print $1}') unique discovered domains.""$NC";
-                                echo -e "$GREEN""[i]$BLUE Command: gobuster dir -u https://$DOMAIN -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 20 -w $2 -o gobuster.""$NC";
+                                echo -e "$GREEN""[i]$BLUE Command: gobuster dir -u https://$DOMAIN -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 40 -w $2 -o gobuster.""$NC";
                                 # Run gobuster
                                 mkdir "$WORKING_DIR"/gobuster;
                                 COUNT=$(wc -l "$3" | awk '{print $1}')
                                 START=$(date +%s);
                                 while read -r ADOMAIN; do
-                                                "$GOBUSTER" dir -u "$HTTP"://"$ADOMAIN" -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 20 -w "$2" -o "$WORKING_DIR"/gobuster/"$ADOMAIN".txt;
+                                                "$GOBUSTER" dir -u "$HTTP"://"$ADOMAIN" -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 40 -w "$2" -o "$WORKING_DIR"/gobuster/"$ADOMAIN".txt;
                                                 COUNT=$((COUNT - 1));
                                                 if [[ "$COUNT" != 0 ]]; then
                                                                 echo -e "$GREEN""[i]$BLUE $COUNT domain(s) remaining.""$NC";
@@ -1354,13 +1354,13 @@ function run_gobuster() {
                                 echo -e "$GREEN""[i]$BLUE Gobuster took $DIFF seconds to run.""$NC";
                 else # Run against all interesting domains
                                 echo -e "$GREEN""[i]$BLUE Running gobuster against all $(wc -l "$3" | awk '{print $1}') discovered interesting domains.""$NC";
-                                echo -e "$GREEN""[i]$BLUE Command: gobuster dir -u $HTTP://$DOMAIN -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 20 -w $2 -o $WORKING_DIR/gobuster""$NC";
+                                echo -e "$GREEN""[i]$BLUE Command: gobuster dir -u $HTTP://$DOMAIN -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 40 -w $2 -o $WORKING_DIR/gobuster""$NC";
                                 # Run gobuster
                                 mkdir "$WORKING_DIR"/gobuster;
                                 COUNT=$(wc -l "$3" | awk '{print $1}')
                                 START=$(date +%s);
                                 while read -r ADOMAIN; do
-                                                "$GOBUSTER" dir -u "$HTTP"://"$ADOMAIN" -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 20 -w "$2" -o "$WORKING_DIR"/gobuster/"$ADOMAIN".txt;
+                                                "$GOBUSTER" dir -u "$HTTP"://"$ADOMAIN" -s '200,201,202,204,307,308,400,401,403,405,500,501,502,503' --timeout 3s -e -k -t 40 -w "$2" -o "$WORKING_DIR"/gobuster/"$ADOMAIN".txt;
                                                 COUNT=$((COUNT - 1));
                                                 if [[ "$COUNT" != 0 ]]; then
                                                                 echo -e "$GREEN""[i]$BLUE $COUNT domain(s) remaining.""$NC";
@@ -1438,13 +1438,13 @@ function run_ffuf() {
                 # Call with domain as $1, wordlist size as $2, and domain list as $3
                 if [[ $3 == $WORKING_DIR/$ALL_RESOLVED ]]; then
                                 echo -e "$GREEN""[i]$BLUE Running ffuf against all $(wc -l "$3" | awk '{print $1}') unique discovered domains.""$NC";
-                                echo -e "$GREEN""[i]$BLUE Command: ffuf -u $HTTP://$DOMAIN/FUZZ -t 180 -w $2 -sf -se -fc 301,302,404,400,500 -k | tee $WORKING_DIR/ffuf.""$NC";
+                                echo -e "$GREEN""[i]$BLUE Command: ffuf -u $HTTP://$DOMAIN/FUZZ -t 150 -w $2 -sf -se -fc 301,302,404,400,500 -k | tee $WORKING_DIR/ffuf.""$NC";
                                 # Run ffuf
                                 mkdir "$WORKING_DIR"/ffuf;
                                 COUNT=$(wc -l "$3" | awk '{print $1}')
                                 START=$(date +%s);
                                 while read -r ADOMAIN; do
-                                                "$FFUF" -u "$HTTP"://"$ADOMAIN"/FUZZ -w "$2" -t 180 -timeout 3 -sf -se -fc 301,302,404,400,500 -k -mc all | tee "$WORKING_DIR"/ffuf/"$ADOMAIN".txt;
+                                                "$FFUF" -u "$HTTP"://"$ADOMAIN"/FUZZ -t 150 -w "$2" -timeout 3 -sf -se -fc 301,302,404,400,500 -k -mc all | tee "$WORKING_DIR"/ffuf/"$ADOMAIN".txt;
                                                 COUNT=$((COUNT - 1));
                                                 if [[ "$COUNT" != 0 ]]; then
                                                                 echo -e "$GREEN""[i]$BLUE $COUNT domain(s) remaining.""$NC";
@@ -1455,13 +1455,13 @@ function run_ffuf() {
                                 echo -e "$GREEN""[i]$BLUE ffuf took $DIFF seconds to run.""$NC";
                 else
                                 echo -e "$GREEN""[i]$BLUE Running ffuf against all $(wc -l "$3" | awk '{print $1}') discovered interesting domains.""$NC";
-                                echo -e "$GREEN""[i]$BLUE Command: ffuf -u $HTTP://$DOMAIN/FUZZ -t 180 -w $2 -sf -se -fc 301,302,404,400,500 -k | tee $WORKING_DIR/ffuf.""$NC";
+                                echo -e "$GREEN""[i]$BLUE Command: ffuf -u $HTTP://$DOMAIN/FUZZ -t 150 -w $2 -sf -se -fc 301,302,404,400,500 -k | tee $WORKING_DIR/ffuf.""$NC";
                                 # Run ffuf
                                 mkdir "$WORKING_DIR"/ffuf;
                                 COUNT=$(wc -l "$3" | awk '{print $1}')
                                 START=$(date +%s);
                                 while read -r ADOMAIN; do
-                                                "$FFUF" -u "$HTTP"://"$ADOMAIN"/FUZZ -t 180 -w "$2" -timeout 3 -sf -se -fc 301,302,404,400,500 -k -mc all | tee "$WORKING_DIR"/ffuf/"$ADOMAIN".txt;
+                                                "$FFUF" -u "$HTTP"://"$ADOMAIN"/FUZZ -t 150 -w "$2" -timeout 3 -sf -se -fc 301,302,404,400,500 -k -mc all | tee "$WORKING_DIR"/ffuf/"$ADOMAIN".txt;
                                                 COUNT=$((COUNT - 1));
                                                 if [[ "$COUNT" != 0 ]]; then
                                                                 echo -e "$GREEN""[i]$BLUE $COUNT domain(s) remaining.""$NC";
@@ -1489,14 +1489,14 @@ function run_dirsearch() {
                 # Call with domain as $1, wordlist size as $2, and domain list as $3
                 if [[ $3 == $WORKING_DIR/$ALL_RESOLVED ]]; then
                                 echo -e "$GREEN""[i]$BLUE Running dirsearch against all $(wc -l "$3" | awk '{print $1}') unique discovered domains.""$NC";
-                                echo -e "$GREEN""[i]$BLUE Command: dirsearch -u $DOMAIN -e php,aspx,asp -t 20 -x 310,302,404 -F --plain-text-report=$WORKING_DIR/dirsearch/$DOMAIN.txt -w
-$2""$NC";
+                                echo -e "$GREEN""[i]$BLUE Command: dirsearch -u $DOMAIN -e php,aspx,asp -t 120 -x 310,302,404 -F --plain-text-report=$WORKING_DIR/dirsearch/$DOMAIN.txt -w $2""$NC";
                                 # Run dirsearch
                                 mkdir "$WORKING_DIR"/dirsearch;
                                 COUNT=$(wc -l "$3" | awk '{print $1}')
                                 START=$(date +%s);
                                 while read -r ADOMAIN; do
-                                                "$DIRSEARCH" -u "$HTTP"://"$ADOMAIN" -e php,aspx,asp -t 100 -x 301,302,404 -F --plain-text-report="$WORKING_DIR"/dirsearch/"$ADOMAIN".txt -w "$2";
+                                                "$DIRSEARCH" -u "$HTTP"://"$ADOMAIN" -e php,aspx,asp -t 120 -x 301,302,404 -F --plain-text-report="$WORKING_DIR"/dirsearch/"$ADOMAIN".txt
+-w "$2";
                                                 COUNT=$((COUNT - 1));
                                                 if [[ "$COUNT" != 0 ]]; then
                                                                 echo -e "$GREEN""[i]$BLUE $COUNT domain(s) remaining.""$NC";
@@ -1507,14 +1507,14 @@ $2""$NC";
                                 echo -e "$GREEN""[i]$BLUE Dirsearch took $DIFF seconds to run.""$NC";
                 else
                                 echo -e "$GREEN""[i]$BLUE Running dirsearch against all $(wc -l "$3" | awk '{print $1}') discovered interesting domains.""$NC";
-                                echo -e "$GREEN""[i]$BLUE Command: dirsearch -u $DOMAIN -e php,aspx,asp -t 100 -x 301,302,404 -F --plain-text-report=$WORKING_DIR/dirsearch/$DOMAIN.txt -w
-$2""$NC";
+                                echo -e "$GREEN""[i]$BLUE Command: dirsearch -u $DOMAIN -e php,aspx,asp -t 120 -x 301,302,404 -F --plain-text-report=$WORKING_DIR/dirsearch/$DOMAIN.txt -w $2""$NC";
                                 # Run dirsearch
                                 mkdir "$WORKING_DIR"/dirsearch;
                                 COUNT=$(wc -l "$3" | awk '{print $1}')
                                 START=$(date +%s);
                                 while read -r ADOMAIN; do
-                                                "$DIRSEARCH" -u "$HTTP"://"$ADOMAIN" -e php,aspx,asp -t 100 -x 301,302,404 -F --plain-text-report="$WORKING_DIR"/dirsearch/"$ADOMAIN".txt -w "$2";
+                                                "$DIRSEARCH" -u "$HTTP"://"$ADOMAIN" -e php,aspx,asp -t 120 -x 301,302,404 -F --plain-text-report="$WORKING_DIR"/dirsearch/"$ADOMAIN".txt
+-w "$2";
                                                 COUNT=$((COUNT - 1));
                                                 if [[ "$COUNT" != 0 ]]; then
                                                                 echo -e "$GREEN""[i]$BLUE $COUNT domain(s) remaining.""$NC";
