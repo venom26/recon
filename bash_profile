@@ -2,6 +2,10 @@ fd(){
 findomain -t $1
 }
 
+wadl(){
+curl -s $1 | grep 'resource path' | cut -d '=' -f2 | cut -d '"' -f2 | sort -u
+}
+
 crtsh(){
 curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | sort -u | grep -v '*'
 }
