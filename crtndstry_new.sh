@@ -3,6 +3,7 @@
 # This was created during a live stream on 11/16/2019
 # twitch.tv/nahamsec
 # Thank you to nukedx and dmfroberson for helping debug/improve
+domain=$1
 
 if [ ! -x "$(command -v jq)" ]; then
 	echo "[-] This script requires jq. Exiting."
@@ -43,7 +44,9 @@ certdata $1
 rootdomains $1
 
 cname() {
-	for i in $(cat data/$1*);do dig asxf $i | grep  CNAME;done | awk '{print $5}' | tee -a data/cname-$1.txt
+	for i in $(cat data/$1*);do dig asxf $i | grep  CNAME;done | awk '{print $5}' | tee -a data/cname-temp.txt
+	rev data/cname-temp.txt | cut -d'.' -f2- | rev >> data/cname-"$domain".txt
+	rm -rf data/cname-temp.txt
 }
 
 cname
