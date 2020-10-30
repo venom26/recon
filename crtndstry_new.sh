@@ -44,7 +44,7 @@ certdata $1
 rootdomains $1
 
 cname() {
-	for i in $(cat data/$1*);do dig asxf $i | grep  CNAME;done | awk '{print $5}' | tee -a data/cname-temp.txt
+	for i in $(cat data/$domain*);do dig asxf $i | grep  CNAME;done | awk '{print $5}' | tee -a data/cname-temp.txt
 	rev data/cname-temp.txt | cut -d'.' -f2- | rev >> data/cname-"$domain".txt
 	rm -rf data/cname-temp.txt
 }
