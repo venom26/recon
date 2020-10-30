@@ -21,6 +21,8 @@ certdata(){
 		certspotter=$(curl -s https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep -w $1\$ | tee rawdata/$1-certspotter.txt)
 		#get a list of domains from digicert
 		bufferover=$(curl -ss https://dns.bufferover.run/dns?q=.$1 | jq '.FDNS_A[]' | sed 's/^\".*.,//g' | sed 's/\"$//g'  | sort -u | tee -a rawdata/$1-bufferover.txt)
+		bufferover=$(curl -s "https://dns.bufferover.run/dns?q=.$1" | jq -r .RDNS[] 2>/dev/null | cut -d ',' -f2 | grep -o "\w.*$1" | sort -u | tee -a rawdata/$1-bufferover.txt)
+		bufferover=$(curl -s "https://tls.bufferover.run/dns?q=.$1" | jq -r .Results 2>/dev/null | cut -d ',' -f3 |grep -o "\w.*$1"| sort -u | tee -a rawdata/$1-bufferover.txt)
 	#echo "$crtsh"
 	#echo "$certspotter"
 	#echo "$bufferover"
@@ -41,7 +43,7 @@ certdata $1
 rootdomains $1
 
 cname() {
-	for i in $(cat data/$1*);do dig asxf $i | grep  CNAME;done | tee -a data/$1-cname.txt
+	for i in $(cat data/$1*);do dig asxf $i | grep  CNAME;done | awk '{print $5}' | tee -a data/cname-$1.txt
 }
 
 cname
