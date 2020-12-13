@@ -95,7 +95,7 @@ echo "done"
 
 #install gau
 echo "Installing gau"
-go get -u github.com/lc/gau
+GO111MODULE=on go get -u -v github.com/lc/gau
 echo "done"
 
 #inatsll antiburl
@@ -130,8 +130,8 @@ echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashr
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
 #install httpx
-GO111MODULE=auto go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
- echo "Done"
+GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
+echo "Done"
 
 #install concurl
 echo "Installing Concurl"
@@ -248,7 +248,11 @@ GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledn
 echo "Done"
 
 echo "installing findomain"
-git clone https://github.com/Edu4rdSHL/findomain.git
+cd ~/tools/
+wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
+chmod +x findomain-linux
+mv findomain-linux findomain
+sudo cp findomain /usr/bin/
 cd ~/tools/
 echo "done"
 
