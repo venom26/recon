@@ -250,7 +250,7 @@ echo "Done"
 
 #installing shuffledns
 echo "Installing Shuffledns"
-GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns
+GO111MODULE=on go get -v github.com/projectdiscovery/shuffledns/cmd/shuffledns
 echo "Done"
 
 echo "installing findomain"
