@@ -161,6 +161,8 @@ echo "done"
 echo "installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
 pip install -r requirements.txt
 sudo python setup.py install
 cd ~/tools/
