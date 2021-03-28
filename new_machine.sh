@@ -227,6 +227,11 @@ git clone https://github.com/jobertabma/virtual-host-discovery.git
 cd ~/tools/
 echo "done"
 
+echo "installing crtfinder"
+git clone https://github.com/eslam3kl/crtfinder.git
+cd ~/tools/
+echo "done"
+
 echo "installing Linkfinder"
 git clone https://github.com/GerbenJavado/LinkFinder.git
 cd LinkFinder
