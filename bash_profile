@@ -81,3 +81,24 @@ ffuf -u $1/FUZZ -mc 200,301,302,403,401 -t 150 -w $(pwd)/wordlist.txt -e .zip,.p
 sf(){
 subfinder -d $1 -silent | httpx -status-code -web-server -title -silent -threads 100
 }
+bypass(){
+~/tools/byp4xx/byp4xx.sh $1 $2
+}
+
+source "$HOME/.cargo/env"
+
+linkfinder(){
+python3 ~/tools/LinkFinder/linkfinder.py -i $1 -o cli
+}
+
+fufresult(){
+cat * | jq -r '.results[] | "\(.length)"+ " " +"\(.url)" + " " +  "\(.status)"' | sort -unt " " -k "1,1"
+}
+
+awsls(){
+aws s3 ls s3://$1/ --no-sign-request
+}
+
+ec2check(){
+while IFS= read -r domain; do if dig +short $domain | grep ec2; then echo $domain | tee -a ec2.txt; fi; done < $1
+}
