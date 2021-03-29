@@ -3,6 +3,7 @@
 sudo apt update
 sudo pip3 install colored
 sudo apt-get install -y psmisc
+sudo apt install -y grepcidr
 sudo apt install -y curl
 sudo apt install  -y host
 sudo apt install -y dnsutils
@@ -133,6 +134,10 @@ cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
 #install httpx
 GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
+echo "Done"
+
+echo "Installing DNSX"
+GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx
 echo "Done"
 
 #install concurl
