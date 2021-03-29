@@ -179,6 +179,12 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
+echo "Installing JSA"
+cd ~/tools/
+git clone https://github.com/w9w/JSA.git
+cd ~/tools/
+echo "Done"
+
 echo "Installing grapX"
 git clone https://github.com/kabilan1290/grapX.git
 cd grapX
