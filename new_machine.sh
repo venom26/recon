@@ -191,6 +191,10 @@ GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 git clone https://github.com/projectdiscovery/nuclei-templates.git
 echo "done"
 
+echo "Installing httpx"
+GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
+echo "done"
+
 echo "installing dirsearch"
 git clone https://github.com/maurosoria/dirsearch.git
 cd ~/tools/
