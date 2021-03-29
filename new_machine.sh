@@ -155,6 +155,11 @@ python3 -m pip install -r requirements.txt
 cd ~/tools
 echo "Done"
 
+echo "Installing Bypass403"
+git clone https://github.com/lobuhi/byp4xx.git
+cd ~/tools
+echo "Done"
+
 #install subjs
 echo "installing subjs"
 GO111MODULE=on go get -u -v github.com/lc/subjs
