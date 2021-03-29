@@ -110,6 +110,7 @@ sudo cp antiburl /usr/bin/
 #installing kxss
 echo "installing kxss"
 go get -u github.com/tomnomnom/hacks/kxss
+GO111MODULE=on go get -v github.com/hahwul/dalfox/v2
 echo "done"
 
 #install hakcheckurl
