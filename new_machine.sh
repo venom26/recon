@@ -132,6 +132,11 @@ go get -u github.com/tomnomnom/gf
 echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
+echo "Installing Commonspeak"
+cd ~/tools/
+git clone https://github.com/assetnote/commonspeak2-wordlists.git
+wget https://raw.githubusercontent.com/wingify/reconner/master/commonspeak.py -O ~/tools/commonspeak2-wordlists/subdomains/
+
 #install httpx
 GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
 echo "Done"
