@@ -103,5 +103,5 @@ ec2check(){
 while IFS= read -r domain; do if dig +short $domain | grep ec2; then echo $domain | tee -a ec2.txt; fi; done < $1
 }
 fierce(){
-python3 ~/tools/fierce/fierce.py --domain $1 --wide --traverse 10
+python3 ~/tools/fierce/fierce/fierce.py --domain $1 --wide --traverse 10
 }
