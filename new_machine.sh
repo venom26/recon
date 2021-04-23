@@ -154,6 +154,7 @@ go get -u github.com/gwen001/github-subdomains
 echo "Done"
 
 echo "Installing Firece"
+cd ~/tools/
 git clone https://github.com/mschwager/fierce.git
 cd fierce
 python3 -m pip install -r requirements.txt
