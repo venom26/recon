@@ -373,7 +373,8 @@ echo "done"
 
 echo "Installing altdns"
 cd ~/tools/
-git clone https://github.com/avlidienbrunn/altdns.git
+wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/altdns.py
+git clone https://github.com/infosec-au/altdns.git
 echo "done"
 
 echo "installing gospider"
