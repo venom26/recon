@@ -135,7 +135,7 @@ cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 echo "Installing Commonspeak"
 cd ~/tools/
 git clone https://github.com/assetnote/commonspeak2-wordlists.git
-wget https://raw.githubusercontent.com/wingify/reconner/master/commonspeak.py -O ~/tools/commonspeak2-wordlists/subdomains/
+wget https://raw.githubusercontent.com/wingify/reconner/master/commonspeak.py -O ~/tools/commonspeak2-wordlists/subdomains/commonspeak.py
 
 #install httpx
 GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
