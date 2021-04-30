@@ -135,7 +135,7 @@ cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 echo "Installing Commonspeak"
 cd ~/tools/
 git clone https://github.com/assetnote/commonspeak2-wordlists.git
-wget https://raw.githubusercontent.com/wingify/reconner/master/commonspeak.py -O ~/tools/commonspeak2-wordlists/subdomains/commonspeak.py
+wget https://raw.githubusercontent.com/venom26/recon/master/commonspeak.py -O ~/tools/commonspeak2-wordlists/subdomains/commonspeak.py
 
 #install httpx
 GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
@@ -258,7 +258,10 @@ cd ~/tools/
 echo "done"
 
 echo "installing crtfinder"
-git clone https://github.com/eslam3kl/crtfinder.git
+git clone https://github.com/venom26/crtfinder.git
+cd ~/tools/crtfinder/
+pip install -r requirments.txt
+
 cd ~/tools/
 echo "done"
 
