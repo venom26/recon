@@ -185,3 +185,9 @@ export LOCAL=http://localhost/; cat redirect.txt | qsreplace "$LOCAL" | xargs -I
 
 #rustscan output parsing
 cat ports.txt | grep -iv batch | grep open | grep -i discovered | awk '{print $6,$4}' | cut -d '/' -f1 | awk '{print $1":"$2}' | less
+
+#checking for ec2 domain takeover
+while IFS= read -r domain; do if dig +short $domain | grep ec2; then echo $domain | tee -a ec2.txt; fi; done < domains
+
+#checking for inscope target
+while IFS= read -r domain; do if whois $domain | grep 'organization name'; then echo $domain | tee -a potential.txt; fi; done < domains
