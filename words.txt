@@ -21,6 +21,7 @@ git
 github
 internal
 jenkins
+jira
 k8s
 kubernetes
 login
@@ -50,6 +51,8 @@ swagger
 system
 system
 test
+test1
+test2
 testing
 testing1
 tomcat
@@ -88,6 +91,7 @@ web-qa
 2018
 2019
 2020
+2021
 3
 4
 5
