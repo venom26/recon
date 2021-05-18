@@ -107,6 +107,13 @@ cd hacks/anti-burl
 go build main.go
 mv main antiburl
 sudo cp antiburl /usr/bin/
+cd ..
+cd unfurn/
+go build main.go
+mv main unfurn
+sudo cp unfurl /usr/bin/
+cd ..
+cd ~/tools/
 
 #installing kxss
 echo "installing kxss"
@@ -298,14 +305,6 @@ echo "installing relative-url-extractor"
 git clone https://github.com/jobertabma/relative-url-extractor.git
 cd ~/tools/
 echo "done"
-
-echo "Installing Nabu"
-GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
-echo "done"
-
-echo "Installing GoAltdns"
-go get github.com/subfinder/goaltdns
-echo "Done"
 
 echo "installing sqlmap"
 sudo apt install sqlmap -y
