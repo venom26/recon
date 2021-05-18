@@ -113,6 +113,11 @@ go build main.go
 mv main unfurn
 sudo cp unfurl /usr/bin/
 cd ..
+cd tok/
+go build main.go
+mv main tok
+sudo cp tok /usr/bin/
+cd ..
 cd ~/tools/
 
 #installing kxss
