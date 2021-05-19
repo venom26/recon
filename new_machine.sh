@@ -108,9 +108,9 @@ go build main.go
 mv main antiburl
 sudo cp antiburl /usr/bin/
 cd ..
-cd unfurn/
+cd unfurl/
 go build main.go
-mv main unfurn
+mv main unfurl
 sudo cp unfurl /usr/bin/
 cd ..
 cd tok/
