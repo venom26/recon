@@ -377,9 +377,11 @@ GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 echo "done"
 
 echo "installing amass"
-go get -v -u github.com/OWASP/Amass/v3/...
-cd $GOPATH/src/github.com/OWASP/Amass
-go install ./...
+cd ~/tools/
+git clone https://github.com/OWASP/Amass.git
+cd Amass
+go get -v github.com/OWASP/Amass/v3/...
+cd ~/tools/
 echo "done"
 
 echo "Creating Wordlist"
