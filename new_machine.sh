@@ -141,7 +141,10 @@ echo "done"
 #install gf
 echo "Installing gf"
 go get -u github.com/tomnomnom/gf
-echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc
+cd ~/tools/
+git clone https://github.com/tomnomnom/gf.git
+cp -r gf/examples/ ~/.gf
+echo 'source ~/tools/gf/gf-completion.bash' >> ~/.bashrc
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
 echo "Installing Commonspeak"
