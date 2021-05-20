@@ -6,6 +6,7 @@ sudo apt-get install -y psmisc
 sudo apt install -y grepcidr
 sudo apt install -y curl
 sudo apt install  -y host
+sudo apt install parallel -y
 sudo apt install -y dnsutils
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libssl-dev
