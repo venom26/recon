@@ -412,6 +412,9 @@ cd /usr/share/nmap/scripts/
 sudo wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse
 
 cd ~/tools
+wget -O permutations_list.txt https://gist.github.com/six2dez/ffc2b14d283e8f8eff6ac83e20a3c4b4/raw
+wget -N -c https://github.com/codingo/DNSCewl/raw/master/DNScewl
+mv DNScewl /usr/bin/DNScewl
 wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords.py
 wget https://raw.githubusercontent.com/maverickNerd/naabu/master/scripts/naabu2nmap.sh
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-endpoints.py
