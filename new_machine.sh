@@ -423,7 +423,7 @@ wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords
 wget https://raw.githubusercontent.com/maverickNerd/naabu/master/scripts/naabu2nmap.sh
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-endpoints.py
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-subdomains.py
-wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/subdomains/subdomains.txt
+wget -O subdomains.txt https://gist.github.com/six2dez/a307a04a222fab5a57466c51e1569acf/raw
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 mv all.txt jhaddix_all.txt
 wget https://raw.githubusercontent.com/BBerastegui/fresh-dns-servers/master/resolvers.txt -O resolvers.txt
