@@ -165,6 +165,10 @@ echo "Done"
 echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 
+#install concurl
+echo "Installing Puredns"
+GO111MODULE=on go get github.com/d3mondev/puredns/v2
+
 echo "Installing Github-Subdomains"
 go get -u github.com/gwen001/github-subdomains
 echo "Done"
