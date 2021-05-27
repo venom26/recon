@@ -165,6 +165,9 @@ echo "Done"
 echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 
+echo "#####Installng Chaos#####"
+GO111MODULE=on go get -v github.com/projectdiscovery/chaos-client/cmd/chaos
+
 #install concurl
 echo "Installing Puredns"
 GO111MODULE=on go get github.com/d3mondev/puredns/v2
