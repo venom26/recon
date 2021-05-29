@@ -236,6 +236,19 @@ echo "Installing nuclei"
 cd ~/tools/
 GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 git clone https://github.com/projectdiscovery/nuclei-templates.git
+mkdir custom_nuclei
+cd custom_nuclei
+git clone https://github.com/esetal/nuclei-bb-templates.git
+git clone https://github.com/panch0r3d/nuclei-templates.git
+git clone https://github.com/notnotnotveg/nuclei-custom-templates.git
+git clone https://github.com/foulenzer/foulenzer-templates.git
+git clone https://github.com/clarkvoss/Nuclei-Templates.git
+git clone https://github.com/z3bd/nuclei-templates.git
+git clone https://github.com/joanbono/nuclei-templates.git
+git clone https://github.com/thebrnwal/Content-Injection-Nuclei-Script.git
+git clone https://github.com/ree4pwn/my-nuclei-templates.git
+git clone https://github.com/System00-Security/backflow.git
+git clone https://github.com/geeknik/nuclei-templates-1.git
 git clone https://github.com/geeknik/the-nuclei-templates.git
 echo "done"
 
