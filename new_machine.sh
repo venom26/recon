@@ -236,6 +236,7 @@ echo "Installing nuclei"
 cd ~/tools/
 GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 git clone https://github.com/projectdiscovery/nuclei-templates.git
+git clone https://github.com/geeknik/the-nuclei-templates.git
 echo "done"
 
 echo "Installing httpx"
