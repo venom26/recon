@@ -84,11 +84,19 @@ cd ~/tools/
 pip install py-altdns
 #install aquatone
 echo "Installing Aquatone"
-go get github.com/michenriksen/aquatone
+cd ~/tools
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone_linux_amd64_1.7.0.zip
+sudo mv aquatone /usr/bin/
+rm -rf aquatone_linux_amd64_1.7.0.zip README.md LICENSE.txt
 echo "done"
 
 echo "Installing Chromium-Browser"
-sudo apt install chromium-browser -y
+cd ~/tools/
+git clone https://github.com/scheib/chromium-latest-linux.git
+cd chromium-latest-linux
+./update-and-run.sh
+cd ~/tools
 echo "Done"
 
 #install assetfinder
