@@ -182,6 +182,7 @@ GO111MODULE=on go get github.com/d3mondev/puredns/v2
 
 echo "Installing Github-Subdomains"
 go get -u github.com/gwen001/github-subdomains
+go get -u github.com/gwen001/github-endpoints
 echo "Done"
 
 echo "Installing Firece"
@@ -445,9 +446,6 @@ wget -O permutations_list.txt https://gist.github.com/six2dez/ffc2b14d283e8f8eff
 wget -N -c https://github.com/codingo/DNSCewl/raw/master/DNScewl
 mv DNScewl /usr/bin/DNScewl
 wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords.py
-wget https://raw.githubusercontent.com/maverickNerd/naabu/master/scripts/naabu2nmap.sh
-wget https://raw.githubusercontent.com/gwen001/github-search/master/github-endpoints.py
-wget https://raw.githubusercontent.com/gwen001/github-search/master/github-subdomains.py
 wget -O subdomains.txt https://gist.github.com/six2dez/a307a04a222fab5a57466c51e1569acf/raw
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 mv all.txt jhaddix_all.txt
