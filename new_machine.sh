@@ -186,6 +186,11 @@ go get -u github.com/gwen001/github-subdomains
 go get -u github.com/gwen001/github-endpoints
 echo "Done"
 
+echo "Installing Paramspider"
+git clone https://github.com/devanshbatham/ParamSpider
+cd ParamSpider
+pip3 install -r requirements.txt
+
 echo "Installing Firece"
 cd ~/tools/
 git clone https://github.com/mschwager/fierce.git
