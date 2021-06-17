@@ -142,6 +142,7 @@ go get github.com/hakluke/hakcheckurl
 #install hakrevdns
 echo "Installing Hakrevdns"
 go get github.com/hakluke/hakrevdns
+go get github.com/hakluke/haktrails
 go get -u github.com/tomnomnom/fff
 #install ffuf
 echo "Installing ffuf"
