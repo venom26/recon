@@ -266,6 +266,7 @@ GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
 echo "done"
 
 echo "installing dirsearch"
+cd ~/tools/
 git clone https://github.com/maurosoria/dirsearch.git
 cd ~/tools/
 echo "done"
