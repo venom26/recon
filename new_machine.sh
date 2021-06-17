@@ -127,6 +127,10 @@ go build main.go
 mv main tok
 sudo cp tok /usr/bin/
 cd ..
+cd qsreplace
+go build main.go
+mv main /usr/bin/qsreplace
+cd ..
 cd ~/tools/
 
 #installing kxss
