@@ -144,6 +144,7 @@ echo "Installing Hakrevdns"
 go get github.com/hakluke/hakrevdns
 go get github.com/hakluke/haktrails
 go get -u github.com/tomnomnom/fff
+go get github.com/dwisiswant0/slackcat
 #install ffuf
 echo "Installing ffuf"
 go get github.com/ffuf/ffuf
