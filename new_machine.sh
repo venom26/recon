@@ -196,6 +196,11 @@ git clone https://github.com/devanshbatham/ParamSpider
 cd ParamSpider
 pip3 install -r requirements.txt
 
+echo "Installing 403 bypasser"
+cd ~/tools
+git clone https://github.com/Dheerajmadhukar/4-ZERO-3.git
+cd ~/tools
+
 echo "Installing Firece"
 cd ~/tools/
 git clone https://github.com/mschwager/fierce.git
