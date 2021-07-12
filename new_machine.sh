@@ -199,6 +199,8 @@ pip3 install -r requirements.txt
 echo "Installing 403 bypasser"
 cd ~/tools
 git clone https://github.com/Dheerajmadhukar/4-ZERO-3.git
+cd 4-ZERO-3/
+sudo chmod +x 403-bypass.sh
 cd ~/tools
 
 echo "Installing Firece"
