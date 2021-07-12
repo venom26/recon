@@ -82,7 +82,7 @@ sf(){
 subfinder -d $1 -silent | httpx -status-code -web-server -title -silent -threads 100
 }
 bypass(){
-~/tools/byp4xx/byp4xx.sh -c $1
+~/tools/4-ZERO-3/403-bypass.sh $1
 }
 
 source "$HOME/.cargo/env"
