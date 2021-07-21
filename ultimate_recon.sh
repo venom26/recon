@@ -15,7 +15,7 @@ fi
 sublist3r -d $domain -v -o op.txt
 subfinder -d $domain -o op.txt  
 assetfinder --subs-only $domain | tee -a op.txt
-amass enum -passive -d $doamin | tee -a op.txt
+amass enum -passive -d $domain | tee -a op.txt
 amass enum -active -d $domain -ip | tee -a amass_ips.txt
 cat amass_ips.txt | awk '{print $1}' | tee -a op.txt
 cat op.txt | sort -u | tee -a all.txt
