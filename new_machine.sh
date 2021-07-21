@@ -196,6 +196,15 @@ git clone https://github.com/devanshbatham/ParamSpider
 cd ParamSpider
 pip3 install -r requirements.txt
 
+echo "Installing roboextractor"
+cd ~/tools/
+git clone https://github.com/Josue87/roboxtractor.git
+cd roboxtractor
+go build
+sudo cp roboxtractor /usr/bin/
+cd ~/tools/
+echo "Done"
+
 echo "Installing 403 bypasser"
 cd ~/tools
 git clone https://github.com/Dheerajmadhukar/4-ZERO-3.git
