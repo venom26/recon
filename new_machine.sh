@@ -185,7 +185,12 @@ GO111MODULE=on go get -v github.com/projectdiscovery/chaos-client/cmd/chaos
 #install concurl
 echo "Installing Puredns"
 GO111MODULE=on go get github.com/d3mondev/puredns/v2
-go get github.com/Josue87/gotator
+cd ~/tools
+git clone git clone https://github.com/Josue87/gotator.git
+cd gotator
+go build
+sudo mv gotator /usr/bin
+cd ~/tools
 
 echo "Installing Github-Subdomains"
 go get -u github.com/gwen001/github-subdomains
