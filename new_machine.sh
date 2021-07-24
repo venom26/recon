@@ -449,7 +449,7 @@ cd /usr/share/nmap/scripts/
 sudo wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse
 
 cd ~/tools
-wget https://gist.githubusercontent.com/mhmdiaa/2742c5e147d49a804b408bfed3d32d07/raw/5dd007667a5b5400521761df931098220c387551/waybackrobots.py
+wget https://wordlists-cdn.assetnote.io/data/manual/best-dns-wordlist.txt
 wget -O permutations_list.txt https://gist.github.com/six2dez/ffc2b14d283e8f8eff6ac83e20a3c4b4/raw
 wget -N -c https://github.com/codingo/DNSCewl/raw/master/DNScewl
 mv DNScewl /usr/bin/DNScewl
