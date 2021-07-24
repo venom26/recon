@@ -173,6 +173,7 @@ echo "Done"
 
 echo "Installing DNSX"
 GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx
+GO111MODULE=on go get -v github.com/projectdiscovery/interactsh/cmd/interactsh-client
 echo "Done"
 
 #install concurl
