@@ -181,6 +181,11 @@ echo "Done"
 echo "Installing Concurl"
 go get -u github.com/tomnomnom/concurl
 
+echo "Installing Cent-Nuclei-Templates"
+GO111MODULE=on go get -u github.com/xm1k3/cent
+cent init
+cent -p ~/tools/cent-nuclei-templates -k
+
 echo "#####Installng Chaos#####"
 GO111MODULE=on go get -v github.com/projectdiscovery/chaos-client/cmd/chaos
 
@@ -274,7 +279,6 @@ cd ~/tools/
 echo "Installing nuclei"
 cd ~/tools/
 GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
-git clone https://github.com/projectdiscovery/nuclei-templates.git
 echo "done"
 
 echo "Installing httpx"
