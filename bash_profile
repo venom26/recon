@@ -2,8 +2,8 @@ fd(){
 findomain -t $1
 }
 
-wadl(){
-curl -s $1 | grep 'resource path' | cut -d '=' -f2 | cut -d '"' -f2 | sort -u
+thewadl(){
+curl -s $i | grep -e 'resource path' -e 'method id' | cut -d '=' -f2 | cut -d '"' -f2 | sort -u
 }
 
 crtsh(){
