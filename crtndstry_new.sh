@@ -21,7 +21,7 @@ certdata(){
 	#done
 		#get a list of domains from certspotter
 		echo "Running Certspotter"
-		certspotter=$(curl -s 'https://api.certspotter.com/v1/issuances?domain=$1&include_subdomains=true&expand=dns_names&expand=issuer&expand=cert' | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep -w $1\$ | tee rawdata/$1-certspotter.txt)
+		certspotter=$(curl -s 'https://api.certspotter.com/v1/issuances?domain=$1&include_subdomains=true&expand=dns_names&expand=issuer&expand=cert' | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | tee rawdata/$1-certspotter.txt)
 		#get a list of domains from digicert
 		echo "Starting Bufferover"
 		bufferover=$(curl -s "https://jldc.me/anubis/subdomains/$1" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | sed '/^\./d' | tee -a rawdata/$1-bufferover.txt)
