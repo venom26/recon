@@ -1,0 +1,23 @@
+from bs4 import BeautifulSoup
+import requests
+import sys
+#url = input("Enter url: ")
+url = sys.argv[1]
+while True:
+        html_content = requests.get(url).text
+        soup = BeautifulSoup(html_content, "lxml")
+        domains_table = soup.find_all("table", class_ = 'table table-bordered')
+
+        for tr in soup.find_all('tr')[9:]:
+                tds = tr.find_all('td')
+                print("Domain: ", tds[0].text,"Cname: ", tds[1].text)
+        exit()
+
+#        url_tag = soup.find('a', {"aria-label":"Next"})
+#        if url_tag.get('href'):
+#                url = 'https://i.hacking8.com' + url_tag.get('href')
+#                print("######### Next Page ########""\n", url)
+#        else:
+#                print("end")
+
+#usage:- for i in $(seq 5);do python3 hacking8.py https://i.hacking8.com/src/subdomain/PayPal?page=$i;sleep 3; done |tee -a results.txt
