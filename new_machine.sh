@@ -186,6 +186,15 @@ GO111MODULE=on go get -u github.com/xm1k3/cent
 cent init
 cent -p ~/tools/cent-nuclei-templates -k
 
+echo "Installing EyeWitness"
+cd ~/tools
+git clone https://github.com/FortyNorthSecurity/EyeWitness.git
+cd EyeWitness/Python/setup
+sudo chmod +x setup.sh
+./setup.sh
+cd ~/tools
+echo "Done"
+
 echo "#####Installng Chaos#####"
 GO111MODULE=on go get -v github.com/projectdiscovery/chaos-client/cmd/chaos
 
