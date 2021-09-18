@@ -314,7 +314,7 @@ cd ~/tools/
 echo "done"
 
 echo "Installing Crobat"
-go get -u github.com/cgboal/sonarsearch/crobat
+go get github.com/cgboal/sonarsearch/cmd/crobat
 echo "Done"
 
 echo "Installing Gf-Templates"
