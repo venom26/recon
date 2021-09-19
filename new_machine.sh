@@ -163,6 +163,14 @@ cp -r gf/examples/ ~/.gf
 echo 'source ~/tools/gf/gf-completion.bash' >> ~/.bashrc
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
+echo "Installing Interlace"
+cd ~/tools
+git clone https://github.com/codingo/Interlace.git
+cd Interlace
+python3 setup.py install
+cd ~/tools
+echo "Done"
+
 echo "Installing Commonspeak"
 cd ~/tools/
 git clone https://github.com/assetnote/commonspeak2-wordlists.git
