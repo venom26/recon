@@ -133,7 +133,8 @@ systemctl snapshot:-takes snapshot of system can be used if system got crashed d
 
 python:-7.38
 
-
+#download all avaliable version of an App
+curl -sf 'https://apkily.com/nubank' | awk -F '"' '/verid/{print $(NF-1)}' | xargs -P10 -I@ bash -c 'curl -sf "https://apkily.com/getapp" --data-raw "verid=@" | grep -oE "pool.apk.aptoide.*?\.apk"' | xargs -I@ -P10 sh -c 'wget @' 
 youtube channel:-kevin du and Wraiith75
 
 
