@@ -194,3 +194,6 @@ interlace -tL all.txt -threads 10 -c 'if dig +short _target_ | grep ec2; then ec
 
 #checking for inscope target
 while IFS= read -r domain; do if whois $domain | grep 'organization name'; then echo $domain | tee -a potential.txt; fi; done < domains
+
+#clone all repositories of an org
+GHORG=facebookresearch; curl "https://api.github.com/orgs/$GHORG/repos?per_page=1000" | grep -o 'git@[^"]*' | sed 's/git@/https:\/\//g' |  sed 's/m:/m\//g' | xargs -L1 git clone
