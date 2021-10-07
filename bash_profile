@@ -11,11 +11,11 @@ curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | aw
 }
 
 fuf(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 200 -D -e '.php','.html','.jsp','.aspx','.zip','.sql','.bak','.BAK','.json','.xml'
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 200 -D -e js,php,bak,txt,html,zip,sql,old,gz,log,swp,yaml,yml,config,save,rsa,ppk -ac
 }
 
 fufapi(){
-ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/apiwords.txt -mc 200 -t 200
+ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/apiwords.txt -mc 200 -t 200 -D -e js,php,bak,txt,html,zip,sql,old,gz,log,swp,yaml,yml,config,save,rsa,ppk -ac
 }
 
 arjun(){
