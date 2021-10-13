@@ -459,6 +459,7 @@ unzip wordlists.zip
 cp ~/tools/dirsearch/db/apiwords.txt .
 cp ~/tools/recon/ffuf_extension.txt .
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/deepmagic.com-prefixes-top50000.txt
+wget https://gist.githubusercontent.com/nullenc0de/9cb36260207924f8e1787279a05eb773/raw/0197d33c073a04933c5c1e2c41f447d74d2e435b/params.txt
 wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/c196a6e62d0b63d6be0c84e6fa224352ea5949df/Discovery/Web-Content/SVNDigger/cat/Language/js.txt
