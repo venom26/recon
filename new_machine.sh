@@ -35,6 +35,7 @@ gem install wpscan
 pip3 install dnsgen
 pip install colored
 pip3 install colored
+pip3 install uro
 sudo systemctl start snap
 echo 'PATH=$PATH:/snap/bin' >> ~/.bashrc
 
