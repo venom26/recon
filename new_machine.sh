@@ -178,6 +178,11 @@ cd ~/tools/
 git clone https://github.com/assetnote/commonspeak2-wordlists.git
 wget https://raw.githubusercontent.com/venom26/recon/master/commonspeak.py -O ~/tools/commonspeak2-wordlists/subdomains/commonspeak.py
 
+echo "Installing LazyS3"
+cd ~/tools/
+git clone https://github.com/nahamsec/lazys3.git
+echo "Done"
+
 #install httpx
 GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
 echo "Done"
