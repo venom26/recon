@@ -106,8 +106,8 @@ go get -u github.com/tomnomnom/assetfinder
 echo "done"
 
 #install gau
-echo "Installing gauplus"
-GO111MODULE=on go get -u -v github.com/bp0lr/gauplus
+echo "Installing gau"
+go install github.com/lc/gau/v2/cmd/gau@latest
 echo "done"
 
 #inatsll antiburl
