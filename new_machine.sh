@@ -326,7 +326,7 @@ echo "Done"
 echo "Installing secretfinder"
 git clone https://github.com/m4ll0k/SecretFinder.git
 cd ~/tools/SecretFinder/
-pip3 install -r requirments.txt
+pip3 install -r requirements.txt
 cd ~/tools/
 echo "done"
 
