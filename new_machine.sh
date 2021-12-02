@@ -165,6 +165,12 @@ cp -r gf/examples/ ~/.gf
 echo 'source ~/tools/gf/gf-completion.bash' >> ~/.bashrc
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 
+echo "Installing S3Prefix"
+go install github.com/meispi/s3prefix@latest
+mkdir ~/.config/
+curl https://raw.githubusercontent.com/meispi/s3prefix/main/common_bucket_prefixes.txt -o ~/.config/common_bucket_prefixes.txt
+echo "Done"
+
 echo "Installing Interlace"
 cd ~/tools
 git clone https://github.com/codingo/Interlace.git
