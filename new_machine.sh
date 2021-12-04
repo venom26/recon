@@ -138,8 +138,6 @@ cd ~/tools/
 #installing kxss
 echo "installing kxss"
 go get -u github.com/tomnomnom/hacks/kxss
-GO111MODULE=on go get -v github.com/hahwul/dalfox/v2
-go get -u github.com/ethicalhackingplayground/bxss
 echo "done"
 
 #install hakcheckurl
@@ -184,9 +182,14 @@ cd ~/tools/
 git clone https://github.com/assetnote/commonspeak2-wordlists.git
 wget https://raw.githubusercontent.com/venom26/recon/master/commonspeak.py -O ~/tools/commonspeak2-wordlists/subdomains/commonspeak.py
 
-echo "Installing LazyS3"
-cd ~/tools/
-git clone https://github.com/nahamsec/lazys3.git
+echo "Installing Rustscan"
+cd ~/tools
+git clone https://github.com/RustScan/RustScan.git
+cd RustScan
+cargo build --release
+sudo cp target/release/rustscan /usr/bin/
+cd ~/tools
+rm -rf RustScan
 echo "Done"
 
 #install httpx
@@ -222,6 +225,8 @@ GO111MODULE=on go get -v github.com/projectdiscovery/chaos-client/cmd/chaos
 #install concurl
 echo "Installing Puredns"
 GO111MODULE=on go get github.com/d3mondev/puredns/v2
+
+echo "Installing Gotator"
 cd ~/tools
 git clone https://github.com/Josue87/gotator.git
 cd gotator
@@ -296,23 +301,9 @@ sudo cp grapX /usr/bin/grapX
 cd ~/tools/
 echo "Done"
 
-echo "Installing Telegram-Bot-Cli"
-git clone https://github.com/ShutdownRepo/telegram-bot-cli.git
-cd ~/tools/
-echo "Done"
-
-echo "installing subdomain-takeover detection tool"
-go get github.com/haccer/subjack
-echo "done"
-cd ~/tools/
-
 echo "Installing nuclei"
 cd ~/tools/
 GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
-echo "done"
-
-echo "Installing httpx"
-GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
 echo "done"
 
 echo "installing dirsearch"
@@ -393,13 +384,6 @@ echo "installing sqlmap"
 sudo apt install sqlmap -y
 echo "done"
 
-echo "installing knock.py"
-git clone https://github.com/guelfoweb/knock.git
-cd knock
-sudo python setup.py install
-cd ~/tools/
-echo "done"
-
 echo "installing nmap"
 sudo apt-get install -y nmap
 echo "done"
@@ -414,11 +398,6 @@ cd ~/tools/massdns
 make
 cd ~/tools/
 echo "done"
-
-cd ~/tools
-echo "Getting smuggler.py"
-wget https://raw.githubusercontent.com/gwen001/pentest-tools/master/smuggler.py
-echo "Done"
 
 echo "installing httprobe"
 go get -u github.com/tomnomnom/httprobe 
