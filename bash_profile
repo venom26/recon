@@ -82,7 +82,7 @@ sf(){
 subfinder -d $1 -silent | httpx -status-code -web-server -title -silent -threads 100
 }
 bypass(){
-~/tools/4-ZERO-3/403-bypass.sh $1
+~/tools/4-ZERO-3/403-bypass.sh -u $1 --exploit
 }
 
 source "$HOME/.cargo/env"
