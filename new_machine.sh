@@ -475,7 +475,7 @@ wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords
 wget -O subdomains.txt https://gist.github.com/six2dez/a307a04a222fab5a57466c51e1569acf/raw
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 mv all.txt jhaddix_all.txt
-wget https://raw.githubusercontent.com/BBerastegui/fresh-dns-servers/master/resolvers.txt -O resolvers.txt
+wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt -O resolvers.txt
 echo -e "${LIGHT_YELLOW}Setting ulimit to 100000 ${LIGHT_GREEN}( so as to make ffuf work fine with higher number of threads ) ${NORMAL}"
 echo "ulimit -n 100000" >> ~/.bashrc
 source ~/.bashrc
