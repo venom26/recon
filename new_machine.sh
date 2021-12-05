@@ -303,7 +303,7 @@ echo "Done"
 
 echo "Installing nuclei"
 cd ~/tools/
-GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 echo "done"
 
 echo "installing dirsearch"
