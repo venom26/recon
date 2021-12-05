@@ -138,6 +138,7 @@ cd ~/tools/
 #installing kxss
 echo "installing kxss"
 go get -u github.com/tomnomnom/hacks/kxss
+GO111MODULE=on go get github.com/hahwul/dalfox/v2
 echo "done"
 
 #install hakcheckurl
