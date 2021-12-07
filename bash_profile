@@ -24,6 +24,10 @@ python3 arjun.py -u $1
 cd -
 }
 
+nucleiop(){
+cat * | grep -v twig | grep -v header-reflection | grep -v header-sqli | grep -v 'graphite-browser-default-credential' | grep -v 'tech-detect' | grep -v 'nginx-version' | grep -v 'http-missing-security-headers' | grep -v 'exposed-pii' | grep -v 'apple-app-site-association' | grep -v 'developer-notes' | grep -v 'addeventlistener-detect' | grep -v 'general-tokens' | grep -v 'base-64-strings' | grep -v 'possibility-of-webshell' | grep -vi 'cve-2020-36287' 
+}
+
 ipinfo(){
 curl ipinfo.io/$1
 }
