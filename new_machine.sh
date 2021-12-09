@@ -462,6 +462,7 @@ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/
 wget https://raw.githubusercontent.com/milo2012/pathbrute/master/defaultPaths.txt
 wget https://raw.githubusercontent.com/milo2012/pathbrute/master/cvePaths.txt
 wget https://raw.githubusercontent.com/venom26/recon/master/venom_all.txt -O all.txt
+wget https://raw.githubusercontent.com/aldo-moreno-leon/Wordlists-content-discovery/master/common-all.txt
 cp ~/tools/recon/apiwords.txt .
 cd -
 cd /usr/share/nmap/scripts/
