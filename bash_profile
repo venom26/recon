@@ -25,7 +25,7 @@ cd -
 }
 
 nucleiop(){
-cat * | grep -v graphite | grep -iv cellpower | grep -v IOC | grep -v 'Clickhouse DB' | grep -v twig | grep -v header-reflection | grep -v header-sqli | grep -v 'graphite-browser-default-credential' | grep -v 'tech-detect' | grep -v 'nginx-version' | grep -v 'http-missing-security-headers' | grep -v 'exposed-pii' | grep -v 'apple-app-site-association' | grep -v 'developer-notes' | grep -v 'addeventlistener-detect' | grep -v 'general-tokens' | grep -v 'base-64-strings' | grep -v 'possibility-of-webshell' | grep -vi 'cve-2020-36287' 
+cat * | grep -v 'dns-waf-detect:cloudflare' | grep -v 'basic-cors-misconfig-flash' | grep -v 'openssh-username-enumeration' | grep -v 'CVE-2019-19985' | grep -v 'CVE-2019-7192' | grep -v 'jira-unauthenticated-user-picker' | grep -v Express-LFR-GET | grep -v dnssec-detection | grep -v json-endpoints | grep -v graphite | grep -iv cellpower | grep -v IOC | grep -v 'Clickhouse DB' | grep -v twig | grep -v header-reflection | grep -v header-sqli | grep -v 'graphite-browser-default-credential' | grep -v 'tech-detect' | grep -v 'nginx-version' | grep -v 'http-missing-security-headers' | grep -v 'exposed-pii' | grep -v 'apple-app-site-association' | grep -v 'developer-notes' | grep -v 'addeventlistener-detect' | grep -v 'generic-tokens' | grep -v 'base-64-strings' | grep -v 'possibility-of-webshell' | grep -vi 'cve-2020-36287' 
 }
 
 ipinfo(){
