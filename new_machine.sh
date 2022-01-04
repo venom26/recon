@@ -112,7 +112,7 @@ echo "done"
 
 echo "Installing Blind Xss Fuzzer"
 cd ~/tools/
-git clone https://github.com/emadshanab/Blind-xss-via-ffuf.git
+git clone https://github.com/venom26/Blind-xss-via-ffuf.git
 echo "Done"
 
 #inatsll antiburl
