@@ -110,6 +110,11 @@ echo "Installing gau"
 go install github.com/lc/gau/v2/cmd/gau@latest
 echo "done"
 
+echo "Installing Blind Xss Fuzzer"
+cd ~/tools/
+git clone https://github.com/emadshanab/Blind-xss-via-ffuf.git
+echo "Done"
+
 #inatsll antiburl
 echo "Downloading hacks and installing antiburl"
 git clone https://github.com/tomnomnom/hacks.git
