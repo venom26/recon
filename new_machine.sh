@@ -153,6 +153,16 @@ echo "done"
 echo "Installing Hakcheckurl"
 go get github.com/hakluke/hakcheckurl
 
+echo "Getting M4ll0k tools"
+cd ~/tools
+mkdir m4ll0k
+cd m4ll0k
+wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.py
+wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.sh
+sudo chmod +x awsgen.sh
+cd ~/tools
+echo "Done"
+
 #install hakrevdns
 echo "Installing Hakrevdns"
 go get github.com/hakluke/hakrevdns
