@@ -96,6 +96,7 @@ echo "Installing Chromium-Browser"
 cd ~/tools/
 touch findomain_config.yml
 touch amass_config.ini
+touch .github_tokens
 git clone https://github.com/scheib/chromium-latest-linux.git
 cd chromium-latest-linux
 ./update-and-run.sh
