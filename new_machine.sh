@@ -55,8 +55,9 @@ select choice in "${choices[@]}"; do
                 yes)
 
                                         echo "Installing Golang"
-                                        wget https://golang.org/dl/go1.16.2.linux-amd64.tar.gz
-                                        sudo tar -xvf go1.16.2.linux-amd64.tar.gz
+                                        version=$(curl -L -s https://golang.org/VERSION?m=text)
+                                        wget https://dl.google.com/go/${version}.linux-amd64.tar.gz
+                                        sudo tar -xvf go1*
                                         sudo mv go /usr/local/
                                         export GOROOT=/usr/local/go
                                         export GOPATH=$HOME/go
