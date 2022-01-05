@@ -157,6 +157,7 @@ echo "Getting M4ll0k tools"
 cd ~/tools
 mkdir m4ll0k
 cd m4ll0k
+wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/gctexposer.py
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.py
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.sh
 sudo chmod +x awsgen.sh
