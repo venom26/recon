@@ -160,6 +160,7 @@ cd m4ll0k
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/gctexposer.py
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.py
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.sh
+wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/collector.py
 sudo chmod +x awsgen.sh
 cd ~/tools
 echo "Done"
