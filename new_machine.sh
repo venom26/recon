@@ -192,6 +192,7 @@ echo "Installing Rustscan"
 cd ~/tools
 git clone https://github.com/RustScan/RustScan.git
 cd RustScan
+source ~/.bashrc
 cargo build --release
 sudo cp target/release/rustscan /usr/bin/
 cd ~/tools
