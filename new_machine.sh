@@ -142,6 +142,7 @@ go build main.go
 sudo mv main /usr/bin/qsreplace
 cd ..
 go get -u github.com/tomnomnom/hacks/htmlattribs
+go get -u github.com/tomnomnom/hacks/get-title
 cd ~/tools/
 
 #installing kxss
