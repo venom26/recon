@@ -119,6 +119,11 @@ cd ~/tools/
 git clone https://github.com/venom26/Blind-xss-via-ffuf.git
 echo "Done"
 
+echo "Installing Sprawl"
+cd ~/tools
+git clone https://github.com/venom26/sprawl.git
+echo "Done"
+
 #inatsll antiburl
 echo "Downloading hacks and installing antiburl"
 git clone https://github.com/tomnomnom/hacks.git
