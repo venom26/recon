@@ -168,7 +168,12 @@ wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/gctexposer.py
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.py
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/awsgen.sh
 wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/collector.py
+wget https://raw.githubusercontent.com/m4ll0k/BBTz/master/getsrc.py
+wget https://gist.githubusercontent.com/m4ll0k/2df369418798717d12bef7f42138fb78/raw/24a10879c7f8eb98f50328d3094eaf83212cc166/chaos.py
+wget https://gist.githubusercontent.com/m4ll0k/7174f3ab09ab2f1ba934e2e779d901b4/raw/5b47a568075e8e18187128088caefa9c5ea099bb/getpoint.py
+wget https://raw.githubusercontent.com/venom26/recon/master/replace.sh
 sudo chmod +x awsgen.sh
+sudo chmod +x replace.sh
 cd ~/tools
 echo "Done"
 
