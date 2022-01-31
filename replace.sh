@@ -2,5 +2,5 @@
 for i in $(cat $2)
 do
 	sr=$1
-	echo "${sr//%FUZZ%/$i}"
+	echo "${sr//%FUZZ%/$i}" >> fuzz-replace.txt
 done
