@@ -231,7 +231,7 @@ cargo install ripgen
 echo "Done"
 
 #install httpx
-GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 echo "Done"
 
 echo "Installing DNSX"
