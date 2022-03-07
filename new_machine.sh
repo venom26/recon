@@ -156,6 +156,10 @@ go get -u github.com/tomnomnom/hacks/kxss
 GO111MODULE=on go get github.com/hahwul/dalfox/v2
 echo "done"
 
+echo "Installing CertGraph"
+go get -u github.com/lanrat/certgraph
+echo "Done"
+
 #install hakcheckurl
 echo "Installing Hakcheckurl"
 go get github.com/hakluke/hakcheckurl
