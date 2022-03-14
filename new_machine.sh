@@ -486,25 +486,20 @@ echo "done"
 
 echo "Creating Wordlist"
 cd ~/tools/dirsearch/db/
-wget https://github.com/xyele/hackerone_wordlist/releases/download/beta/wordlists.zip
-https://gist.githubusercontent.com/tomnomnom/57af04c3422aac8c6f04451a4c1daa51/raw/9f551e023ff17d093dcb9f8b355c3af55827cb34/short-wordlist.txt -O shortwords.txt
-unzip wordlists.zip
-cp ~/tools/dirsearch/db/apiwords.txt .
+#wget https://github.com/xyele/hackerone_wordlist/releases/download/beta/wordlists.zip
+#https://gist.githubusercontent.com/tomnomnom/57af04c3422aac8c6f04451a4c1daa51/raw/9f551e023ff17d093dcb9f8b355c3af55827cb34/short-wordlist.txt -O shortwords.txt
+#unzip wordlists.zip
 cp ~/tools/recon/ffuf_extension.txt .
-wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/deepmagic.com-prefixes-top50000.txt
+#wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/deepmagic.com-prefixes-top50000.txt
+wget https://github.com/six2dez/OneListForAll/releases/download/v2.3/onelistforall.txt
 wget https://gist.githubusercontent.com/nullenc0de/9cb36260207924f8e1787279a05eb773/raw/0197d33c073a04933c5c1e2c41f447d74d2e435b/params.txt
 wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
-wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/c196a6e62d0b63d6be0c84e6fa224352ea5949df/Discovery/Web-Content/SVNDigger/cat/Language/js.txt
 wget https://raw.githubusercontent.com/r3s-ryan/R3S-CTF/a2733be0b3fdc553930493ae164256e3a30f40aa/SecLists/Discovery/Web-Content/quickhits.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
-wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/spring-boot.txt
-wget https://raw.githubusercontent.com/milo2012/pathbrute/master/defaultPaths.txt
 wget https://raw.githubusercontent.com/codingo/VHostScan/master/VHostScan/wordlists/virtual-host-scanning.txt
-wget https://raw.githubusercontent.com/milo2012/pathbrute/master/cvePaths.txt
 wget https://raw.githubusercontent.com/venom26/recon/master/venom_all.txt -O all.txt
-wget https://raw.githubusercontent.com/aldo-moreno-leon/Wordlists-content-discovery/master/common-all.txt
 cp ~/tools/recon/apiwords.txt .
 cd -
 cd /usr/share/nmap/scripts/
