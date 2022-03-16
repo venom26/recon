@@ -153,7 +153,8 @@ cd ~/tools/
 #installing kxss
 echo "installing kxss"
 go get -u github.com/tomnomnom/hacks/kxss
-GO111MODULE=on go get github.com/hahwul/dalfox/v2
+#GO111MODULE=on go get github.com/hahwul/dalfox/v2
+go get -u github.com/takshal/freq
 echo "done"
 
 echo "Installing CertGraph"
