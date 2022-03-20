@@ -382,7 +382,7 @@ cd ~/tools/
 echo"Done"
 
 echo "Installing arjun"
-git clone https://github.com/s0md3v/Arjun.git
+https://github.com/edduu/Arjun.git
 echo "Done"
 cd ~/tools/
 
