@@ -2019,6 +2019,14 @@ debet
 debit
 _debug
 debug
+debug=yes
+debug=no
+debug=true
+debug=True
+_debug=yes
+_debug=no
+_debug=true
+_debug=True
 debug2
 debug3
 debugbox
