@@ -2,6 +2,10 @@ fd(){
 findomain -t $1
 }
 
+paramfinder(){
+x8 -u $1 -w ~/tools/dirsearch/db/params.txt -c 10
+}
+
 thewadl(){
 curl -s $i | grep -e 'resource path' -e 'method id' | cut -d '=' -f2 | cut -d '"' -f2 | sort -u
 }
