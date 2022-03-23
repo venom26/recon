@@ -493,7 +493,7 @@ cd ~/tools/dirsearch/db/
 cp ~/tools/recon/ffuf_extension.txt .
 #wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/deepmagic.com-prefixes-top50000.txt
 wget https://github.com/six2dez/OneListForAll/releases/download/v2.3/onelistforall.txt
-wget https://gist.githubusercontent.com/nullenc0de/9cb36260207924f8e1787279a05eb773/raw/0197d33c073a04933c5c1e2c41f447d74d2e435b/params.txt
+wget https://raw.githubusercontent.com/venom26/recon/master/params.txt
 wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/c196a6e62d0b63d6be0c84e6fa224352ea5949df/Discovery/Web-Content/SVNDigger/cat/Language/js.txt
 wget https://raw.githubusercontent.com/r3s-ryan/R3S-CTF/a2733be0b3fdc553930493ae164256e3a30f40aa/SecLists/Discovery/Web-Content/quickhits.txt
