@@ -1,4 +1,4 @@
-**#Random Recon Tricks**
+**Bug Hunting Tricks**
 
 **Extracting links, paths from source of a website**
 ```
