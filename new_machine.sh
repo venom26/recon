@@ -207,6 +207,12 @@ mkdir ~/.config/
 curl https://raw.githubusercontent.com/meispi/s3prefix/main/common_bucket_prefixes.txt -o ~/.config/common_bucket_prefixes.txt
 echo "Done"
 
+echo "Installing X8"
+wget https://github.com/Sh1Yo/x8/releases/download/v3.2.1/x8_linux.tar.gz
+tar -xvf x8_linux.tar.gz
+rm x8_linux.tar.gz
+mv x8 /usr/bin/
+
 echo "Installing Interlace"
 cd ~/tools
 git clone https://github.com/codingo/Interlace.git
