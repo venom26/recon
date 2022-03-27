@@ -480,7 +480,7 @@ echo "Done"
 
 echo "installing subfinder"
 source ~/.bashrc
-GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 echo "done"
 
 echo "installing amass"
