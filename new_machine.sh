@@ -106,7 +106,7 @@ echo "Done"
 
 #install assetfinder
 echo "Installing Assetfinder"
-go get -u github.com/tomnomnom/assetfinder 
+go install -v  github.com/tomnomnom/assetfinder@latest
 echo "done"
 
 #install gau
@@ -125,45 +125,23 @@ git clone https://github.com/venom26/sprawl.git
 echo "Done"
 
 #inatsll antiburl
-echo "Downloading hacks and installing antiburl"
-git clone https://github.com/tomnomnom/hacks.git
-cd hacks/anti-burl
-go build main.go
-mv main antiburl
-sudo cp antiburl /usr/bin/
-cd ..
-cd unfurl/
-go build main.go
-mv main unfurl
-sudo cp unfurl /usr/bin/
-cd ..
-cd tok/
-go build main.go
-mv main tok
-sudo cp tok /usr/bin/
-cd ..
-cd qsreplace
-go build main.go
-sudo mv main /usr/bin/qsreplace
-cd ..
-go get -u github.com/tomnomnom/hacks/htmlattribs
-go get -u github.com/tomnomnom/hacks/get-title
+echo "Downloading Tomnomnom Tools"
+go install -v github.com/tomnomnom/hacks/anti-burl@latest
+go install -v github.com/tomnomnom/hacks/qsreplace@latest
+go install -v github.com/tomnomnom/hacks/unfurl@latest
+go install -v github.com/tomnomnom/hacks/tok@latest
+go install -v github.com/tomnomnom/hacks/htmlattribs@latest
+go install -v github.com/tomnomnom/hacks/get-title@latest
+go install -v github.com/tomnomnom/hacks/kxss@latest
 cd ~/tools/
 
-#installing kxss
-echo "installing kxss"
-go get -u github.com/tomnomnom/hacks/kxss
-#GO111MODULE=on go get github.com/hahwul/dalfox/v2
-go get -u github.com/takshal/freq
-echo "done"
-
 echo "Installing CertGraph"
-go get -u github.com/lanrat/certgraph
+go install -v github.com/lanrat/certgraph@latest
 echo "Done"
 
 #install hakcheckurl
 echo "Installing Hakcheckurl"
-go get github.com/hakluke/hakcheckurl
+go install github.com/hakluke/hakcheckurl@latest
 
 echo "Getting M4ll0k tools"
 cd ~/tools
@@ -184,17 +162,17 @@ echo "Done"
 
 #install hakrevdns
 echo "Installing Hakrevdns"
-go get github.com/hakluke/hakrevdns
-go get github.com/hakluke/haktrails
-go get -u github.com/tomnomnom/fff
-go get github.com/dwisiswant0/slackcat
+go install -v github.com/hakluke/hakrevdns@latest
+go install -v github.com/tomnomnom/fff@latest
+go install -v github.com/dwisiswant0/slackcat@latest
 #install ffuf
 echo "Installing ffuf"
-go get github.com/ffuf/ffuf
+go install -v github.com/ffuf/ffuf@latest
 echo "done"
 #install gf
+
 echo "Installing gf"
-go get -u github.com/tomnomnom/gf
+go install -v github.com/tomnomnom/gf@latest
 cd ~/tools/
 git clone https://github.com/tomnomnom/gf.git
 cp -r gf/examples/ ~/.gf
@@ -246,46 +224,41 @@ go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 echo "Done"
 
 echo "Installing DNSX"
-GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx
-GO111MODULE=on go get -v github.com/projectdiscovery/interactsh/cmd/interactsh-client
+go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+go install -v github.com/projectdiscovery/interactsh/cmd/interactsh-client@latest
 echo "Done"
 
 #install concurl
 echo "Installing Concurl"
-go get -u github.com/tomnomnom/concurl
+go install -v github.com/tomnomnom/concurl@latest
 
 echo "Installing Cent-Nuclei-Templates"
-GO111MODULE=on go get -u github.com/xm1k3/cent
+go install -v github.com/xm1k3/cent@latest
 cent init
 cent -p ~/tools/cent-nuclei-templates -k
 
-echo "Installing EyeWitness"
-cd ~/tools
-git clone https://github.com/FortyNorthSecurity/EyeWitness.git
-cd EyeWitness/Python/setup
-sudo chmod +x setup.sh
-./setup.sh
-cd ~/tools
-echo "Done"
+#echo "Installing EyeWitness"
+#cd ~/tools
+#git clone https://github.com/FortyNorthSecurity/EyeWitness.git
+#cd EyeWitness/Python/setup
+#sudo chmod +x setup.sh
+#./setup.sh
+#cd ~/tools
+#echo "Done"
 
 echo "#####Installng Chaos#####"
-GO111MODULE=on go get -v github.com/projectdiscovery/chaos-client/cmd/chaos
+go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest
 
 #install concurl
 echo "Installing Puredns"
-GO111MODULE=on go get github.com/d3mondev/puredns/v2
+go install -v github.com/d3mondev/puredns/v2@latest
 
 echo "Installing Gotator"
-cd ~/tools
-git clone https://github.com/Josue87/gotator.git
-cd gotator
-go build
-sudo mv gotator /usr/bin
-cd ~/tools
+go install -v github.com/Josue87/gotator@latest
 
 echo "Installing Github-Subdomains"
-go get -u github.com/gwen001/github-subdomains
-go get -u github.com/gwen001/github-endpoints
+go install -v github.com/gwen001/github-subdomains@latest
+go install -v github.com/gwen001/github-endpoints@latest
 echo "Done"
 
 echo "Installing Paramspider"
@@ -294,12 +267,7 @@ cd ParamSpider
 pip3 install -r requirements.txt
 
 echo "Installing roboextractor"
-cd ~/tools/
-git clone https://github.com/Josue87/roboxtractor.git
-cd roboxtractor
-go build
-sudo cp roboxtractor /usr/bin/
-cd ~/tools/
+go install -v github.com/Josue87/roboxtractor@latest
 echo "Done"
 
 echo "Installing 403 bypasser"
@@ -324,7 +292,7 @@ echo "Done"
 
 #install subjs
 echo "installing subjs"
-GO111MODULE=on go get -u -v github.com/lc/subjs
+go install -v github.com/lc/subjs@latest
 
 echo "installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
@@ -377,7 +345,7 @@ cd ~/tools/
 echo "done"
 
 echo "Installing Crobat"
-go get github.com/cgboal/sonarsearch/cmd/crobat
+go install -v github.com/cgboal/sonarsearch/cmd/crobat@latest
 echo "Done"
 
 echo "Installing Gf-Templates"
@@ -408,12 +376,8 @@ cd ~/tools/
 
 #installing meg
 echo "Installing meg"
-go get -u github.com/tomnomnom/meg
+go install -v github.com/tomnomnom/meg@latest
 echo "done"
-
-echo "Installing Dnsprobe"
-GO111MODULE=on go get -u -v github.com/projectdiscovery/dnsprobe
-echo "Done"
 
 echo "installing findomain"
 cd ~/tools/
@@ -449,23 +413,19 @@ cd ~/tools/
 echo "done"
 
 echo "installing httprobe"
-go get -u github.com/tomnomnom/httprobe 
-echo "done"
-
-echo "installing unfurl"
-go get -u github.com/tomnomnom/unfurl 
+go install -v github.com/tomnomnom/httprobe@latest
 echo "done"
 
 echo "installing waybackurls"
-go get github.com/tomnomnom/waybackurls
+go install -v github.com/tomnomnom/waybackurls@latest
 echo "done"
 
 echo "Installing anew"
-go get -u github.com/tomnomnom/anew
+go install -v github.com/tomnomnom/anew@latest
 echo "Done"
 
 echo "Installing Concurl"
-go get -u github.com/tomnomnom/concurl
+go install -v github.com/tomnomnom/concurl@latest
 echo "done"
 
 echo "Installing altdns"
@@ -475,7 +435,7 @@ git clone https://github.com/infosec-au/altdns.git
 echo "done"
 
 echo "installing gospider"
-go get -u github.com/jaeles-project/gospider
+go install -v github.com/jaeles-project/gospider@latest
 echo "Done"
 
 echo "installing subfinder"
@@ -487,7 +447,7 @@ echo "installing amass"
 cd ~/tools/
 git clone https://github.com/OWASP/Amass.git
 cd Amass
-go get -v github.com/OWASP/Amass/v3/...
+go install -v github.com/OWASP/Amass/v3/...@master
 cd ~/tools/
 echo "done"
 
