@@ -133,6 +133,7 @@ go install -v github.com/tomnomnom/hacks/tok@latest
 go install -v github.com/tomnomnom/hacks/htmlattribs@latest
 go install -v github.com/tomnomnom/hacks/get-title@latest
 go install -v github.com/tomnomnom/hacks/kxss@latest
+go install -v github.com/takshal/freq@latest  
 cd ~/tools/
 
 echo "Installing CertGraph"
