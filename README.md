@@ -57,3 +57,11 @@ References:- https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breakin
 ```
 Content-Type: ${#context["com.opensymphone.xwork2.dispatcher.HttpServletResponse"].addHeader("Struts-RCE",191*7)}.multipart/form-data
 ```
+
+**WAF**
+```
+#Finding Origin IP 
+Check IP address history from https://viewdns.info/
+References:- https://twitter.com/yassineaboukir/status/932908449775669248
+https://github.com/christophetd/CloudFlair
+```
