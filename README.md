@@ -62,6 +62,8 @@ Content-Type: ${#context["com.opensymphone.xwork2.dispatcher.HttpServletResponse
 ```
 #Finding Origin IP 
 Check IP address history from https://viewdns.info/
+or use below command 
+curl 'https://api.viewdns.info/iphistory/?domain=<domain>&apikey=<api key>&output=json' -H 'User-Agent: Mozilla/5.0 Windows NT 10.0 Win64 AppleWebKit/537.36 Chrome/69.0.3497.100' | jq . | grep ip | cut -d '"' -f4 | tail -n+2
 References:- https://twitter.com/yassineaboukir/status/932908449775669248
 https://github.com/christophetd/CloudFlair
 ```
