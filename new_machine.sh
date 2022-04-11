@@ -133,6 +133,7 @@ go install -v github.com/tomnomnom/hacks/tok@latest
 go install -v github.com/tomnomnom/hacks/htmlattribs@latest
 go install -v github.com/tomnomnom/hacks/get-title@latest
 go install -v github.com/tomnomnom/hacks/kxss@latest
+go install -v github.com/tomnomnom/hacks/comb@latest
 go install -v github.com/takshal/freq@latest  
 go install -v github.com/s0md3v/smap/cmd/smap@latest
 cd ~/tools/
