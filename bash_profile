@@ -14,6 +14,20 @@ crtsh(){
 curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | sort -u | grep -v '*'
 }
 
+fdir(){
+feroxbuster -u $1 -w ~/tools/dirsearch/db/dicc.txt --random-agent --extract-links  -r -k -t 200
+}
+
+
+fapi(){
+feroxbuster -u $1 -w ~/tools/dirsearch/db/apiwords.txt --random-agent --extract-links  -r -k -t 200
+}
+
+
+fraf(){
+feroxbuster -u $1 -w ~/tools/dirsearch/db/raft-large-directories.txt --random-agent --extract-links  -r -k -t 200
+}
+
 fuf(){
 ffuf -u $1/FUZZ -w ~/tools/dirsearch/db/dicc.txt -mc 200,301,302 -t 200 -D -e js,php,bak,txt,html,zip,sql,old,gz,log,swp,yaml,yml,config,save,rsa,ppk -ac
 }
