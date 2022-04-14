@@ -41,7 +41,8 @@ echo 'PATH=$PATH:/snap/bin' >> ~/.bashrc
 
 #install rust
 echo "Installing rust"
-curl https://sh.rustup.rs -sSf | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+source $HOME/.cargo/env 
 echo "Done"
 
 
