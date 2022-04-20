@@ -227,6 +227,10 @@ echo "Done"
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 echo "Done"
 
+echo "Installing Metabigor"
+go install github.com/j3ssie/metabigor@latest
+echo "Done"
+
 echo "Installing DNSX"
 go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 go install -v github.com/projectdiscovery/interactsh/cmd/interactsh-client@latest
