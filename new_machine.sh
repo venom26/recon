@@ -195,6 +195,12 @@ tar -xvf x8_linux.tar.gz
 rm x8_linux.tar.gz
 mv x8 /usr/bin/
 
+echo "Installing WebAnalyzer"
+go install -v github.com/rverton/webanalyze/cmd/webanalyze@latest
+cd ~/tools
+webanalyze -update
+echo "Done"
+
 echo "Installing Interlace"
 cd ~/tools
 git clone https://github.com/codingo/Interlace.git
