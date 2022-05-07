@@ -11,7 +11,7 @@ curl -s $i | grep -e 'resource path' -e 'method id' | cut -d '=' -f2 | cut -d '"
 }
 
 crtsh(){
-curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | sort -u | grep -v '*'
+curl -s https://crt.sh/\?q\=%25.$1\&output\=json | jq . | egrep -e 'common_name' -e 'name_value' | awk '{print $2}'| sed -e 's/"//g'| sed -e 's/,//g' |  awk '{gsub(/\\n/,"\n")}1' | sed 's/\*\.//g' | sort -u
 }
 
 fdir(){
