@@ -110,6 +110,10 @@ echo "Installing Assetfinder"
 go install -v  github.com/tomnomnom/assetfinder@latest
 echo "done"
 
+echo "Installing Deduplicate"
+go install -v github.com/nytr0gen/deduplicate@latest
+echo "done"
+
 #install gau
 echo "Installing gau"
 go install github.com/lc/gau/v2/cmd/gau@latest
