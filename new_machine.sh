@@ -492,6 +492,7 @@ sudo wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulne
 
 cd ~/tools
 wget https://wordlists-cdn.assetnote.io/data/manual/best-dns-wordlist.txt
+wget https://gist.githubusercontent.com/maliciousgroup/3e2af26eb2af3ced157256ef08785557/raw/fbe6eba0d80e060563fd45ce498dfec6de67cb5c/getdirs.py
 wget -O permutations_list.txt https://gist.github.com/six2dez/ffc2b14d283e8f8eff6ac83e20a3c4b4/raw
 wget -N -c https://github.com/codingo/DNSCewl/raw/master/DNScewl
 mv DNScewl /usr/bin/DNScewl
@@ -499,7 +500,7 @@ wget https://raw.githubusercontent.com/m4ll0k/Bug-Bounty-Toolz/master/getjswords
 wget -O subdomains.txt https://gist.github.com/six2dez/a307a04a222fab5a57466c51e1569acf/raw
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 mv all.txt jhaddix_all.txt
-wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt -O resolvers.txt
+#wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt -O resolvers.txt
 echo -e "${LIGHT_YELLOW}Setting ulimit to 100000 ${LIGHT_GREEN}( so as to make ffuf work fine with higher number of threads ) ${NORMAL}"
 echo "ulimit -n 100000" >> ~/.bashrc
 source ~/.bashrc
