@@ -493,7 +493,7 @@ sudo wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulne
 
 cd ~/tools
 wget https://wordlists-cdn.assetnote.io/data/manual/best-dns-wordlist.txt
-wget https://gist.githubusercontent.com/maliciousgroup/3e2af26eb2af3ced157256ef08785557/raw/fbe6eba0d80e060563fd45ce498dfec6de67cb5c/getdirs.py
+wget https://gist.githubusercontent.com/venom26/d61ae198dbfc12c5d2e16f1f9132a4ac/raw/b5510afa66df460512e9a946acba9d9dc5acdb28/getdirs.py
 wget -O permutations_list.txt https://gist.github.com/six2dez/ffc2b14d283e8f8eff6ac83e20a3c4b4/raw
 wget -N -c https://github.com/codingo/DNSCewl/raw/master/DNScewl
 mv DNScewl /usr/bin/DNScewl
