@@ -142,6 +142,7 @@ go install -v github.com/tomnomnom/hacks/kxss@latest
 go install -v github.com/tomnomnom/hacks/comb@latest
 go install -v github.com/takshal/freq@latest  
 go install -v github.com/s0md3v/smap/cmd/smap@latest
+go install -v github.com/hakluke/hakfindinternaldomains@latest
 cd ~/tools/
 
 echo "Installing CertGraph"
