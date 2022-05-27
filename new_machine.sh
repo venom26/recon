@@ -252,10 +252,10 @@ echo "Done"
 echo "Installing Concurl"
 go install -v github.com/tomnomnom/concurl@latest
 
-echo "Installing Cent-Nuclei-Templates"
-go install -v github.com/xm1k3/cent@latest
-cent init
-cent -p ~/tools/cent-nuclei-templates -k
+echo "Installing Nuclei-Templates"
+cd ~/tools
+git clone https://github.com/projectdiscovery/nuclei-templates.git
+echo "Done"
 
 #echo "Installing EyeWitness"
 #cd ~/tools
