@@ -328,10 +328,11 @@ sudo python setup.py install
 cd ~/tools/
 echo "done"
 
-echo "Installing JSA"
+echo "Installing xnLinkFinder"
 cd ~/tools/
-git clone https://github.com/w9w/JSA.git
-cd ~/tools/
+git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git
+cd ~/tools/xnLinkFinder/
+python3 setup.py install
 echo "Done"
 
 echo "Installing grapX"
