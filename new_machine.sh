@@ -243,8 +243,7 @@ echo "Done"
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 echo "Done"
 
-echo "Installing Metabigor"
-go install github.com/j3ssie/metabigor@latest
+echo "Installing sdlookup"
 go install github.com/j3ssie/sdlookup@latest
 go install github.com/j3ssie/cdnstrip@latest
 echo "Done"
