@@ -476,15 +476,16 @@ cd ~/tools/dirsearch/db/
 #unzip wordlists.zip
 cp ~/tools/recon/ffuf_extension.txt .
 #wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/deepmagic.com-prefixes-top50000.txt
-wget https://github.com/six2dez/OneListForAll/releases/download/v2.3/onelistforall.txt
+#wget https://github.com/six2dez/OneListForAll/releases/download/v2.3/onelistforall.txt
 wget https://raw.githubusercontent.com/venom26/recon/master/params.txt
-wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
+#wget https://raw.githubusercontent.com/assetnote/commonspeak2-wordlists/master/wordswithext/php.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/c196a6e62d0b63d6be0c84e6fa224352ea5949df/Discovery/Web-Content/SVNDigger/cat/Language/js.txt
 wget https://raw.githubusercontent.com/r3s-ryan/R3S-CTF/a2733be0b3fdc553930493ae164256e3a30f40aa/SecLists/Discovery/Web-Content/quickhits.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
 wget https://raw.githubusercontent.com/codingo/VHostScan/master/VHostScan/wordlists/virtual-host-scanning.txt
 wget https://raw.githubusercontent.com/venom26/recon/master/venom_all.txt -O all.txt
+wget https://raw.githubusercontent.com/ayoubfathi/leaky-paths/main/leaky-paths.txt
 cp ~/tools/recon/apiwords.txt .
 cd -
 cd /usr/share/nmap/scripts/
