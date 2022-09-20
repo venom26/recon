@@ -2,6 +2,7 @@
 
 sudo apt update
 sudo pip3 install colored
+sudo apt install python3-pip -y
 sudo apt-get install -y psmisc
 sudo apt install -y grepcidr
 sudo apt install -y lynx
