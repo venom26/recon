@@ -335,6 +335,7 @@ python3 setup.py install
 echo "Done"
 
 echo "Installing grapX"
+cd ~/tools/
 git clone https://github.com/kabilan1290/grapX.git
 cd grapX
 sudo chmod +x grapX
