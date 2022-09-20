@@ -334,6 +334,14 @@ cd ~/tools/xnLinkFinder/
 python3 setup.py install
 echo "Done"
 
+echo "Installing xnLinkFinder"
+cd ~/tools/
+git clone https://github.com/xnl-h4ck3r/waymore.git
+cd ~/tools/waymore
+pip3 install -r requirements.txt
+python3 setup.py install
+echo "Done"
+
 echo "Installing grapX"
 cd ~/tools/
 git clone https://github.com/kabilan1290/grapX.git
