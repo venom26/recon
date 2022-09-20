@@ -235,10 +235,6 @@ cd ~/tools
 rm -rf RustScan
 echo "Done"
 
-echo "Installing ripgen"
-cargo install ripgen
-echo "Done"
-
 #install httpx
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 echo "Done"
@@ -250,6 +246,7 @@ echo "Done"
 
 echo "Installing DNSX"
 go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest
 go install -v github.com/projectdiscovery/interactsh/cmd/interactsh-client@latest
 echo "Done"
 
@@ -411,11 +408,6 @@ wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-l
 chmod +x findomain-linux
 mv findomain-linux findomain
 sudo cp findomain /usr/bin/
-cd ~/tools/
-echo "done"
-
-echo "installing relative-url-extractor"
-git clone https://github.com/jobertabma/relative-url-extractor.git
 cd ~/tools/
 echo "done"
 
