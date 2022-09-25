@@ -158,6 +158,10 @@ echo "Installing SourceMapper"
 go install github.com/denandz/sourcemapper@latest
 echo "done"
 
+echo "Installing Cook"
+go install -v github.com/giteshnxtlvl/cook/v2/cmd/cook@latest
+echo "done"
+
 echo "Getting M4ll0k tools"
 cd ~/tools
 mkdir m4ll0k
