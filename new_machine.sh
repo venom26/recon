@@ -126,6 +126,18 @@ cd ~/tools/
 git clone https://github.com/venom26/Blind-xss-via-ffuf.git
 echo "Done"
 
+echo "Installing MKSub"
+go install github.com/trickest/mksub@latest
+echo "done"
+
+echo "Installing Regulator"
+cd ~/tools/
+git clone https://github.com/cramppet/regulator.git
+cd regulator
+pip3 install -r requirements.txt
+cd ~/tools/
+echo "Done"
+
 echo "Installing Sprawl"
 cd ~/tools
 git clone https://github.com/venom26/sprawl.git
