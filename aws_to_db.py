@@ -43,7 +43,7 @@ with open(fname, errors='ignore') as user_file:
                             subaltnm = cc.get("subjectAltName")
                             # print(h,sub,issu,subcn,subaltnm)
                             cnt+=1
-                            print(cnt)
+                            #print(cnt)
                             cursor.execute("INSERT INTO AWS (host,subject,issuer,subject_CN,subject_alt_name) values (?,?,?,?,?)", (h,sub,issu,subcn,subaltnm))
         except Exception as e:
             print('error',e)
