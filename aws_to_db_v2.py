@@ -13,7 +13,7 @@ import datetime
 import ast
 import tldextract
 import re
-
+from urllib.parse import urlsplit
 currentDateTime = datetime.datetime.now()
 connection = sqlite3.connect('aws.db')
 cursor = connection.cursor()   
@@ -45,6 +45,11 @@ def extract_domain(string):
         domain = None
     return domain
 
+def extract_root_domain(subdomain):
+    url = 'http://' + subdomain
+    url_parts = urlsplit(url)
+    domain = url_parts.hostname
+    return domain
 
 def extract_domain_name(subdomain):
     extracted = tldextract.extract(subdomain)
@@ -74,7 +79,7 @@ with open(fname, errors='ignore') as user_file:
                         issu = extract_organization(cc.get("issuer"))
                         subcn = cc.get("subjectCN")
                         subaltnm = cc.get("subjectAltName")
-                        domain_name = extract_domain_name(extract_domain(str(subcn)))
+                        domain_name = extract_domain_name(extract_root_domain(str(subcn)))
                         cnt+=1
                         cursor.execute("INSERT INTO AWS (host,subject,issuer,subject_CN,subject_alt_name, domain_name) values (?,?,?,?,?,?)", (h,sub,issu,subcn,subaltnm, domain_name))
         except Exception as e:
