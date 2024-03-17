@@ -58,7 +58,7 @@ select choice in "${choices[@]}"; do
                 yes)
 
                                         echo "Installing Golang"
-                                        version=$(curl -L -s https://golang.org/VERSION?m=text)
+                                        version=$(curl -s 'https://golang.org/VERSION?m=text' -L| cut -d ' ' -f1 | head -n1)
                                         wget https://dl.google.com/go/${version}.linux-amd64.tar.gz
                                         sudo tar -xvf go1*
                                         sudo mv go /usr/local/
